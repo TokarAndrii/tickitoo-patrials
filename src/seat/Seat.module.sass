@@ -1,0 +1,24 @@
+.seat
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px; 
+    &:hover
+        background-color: #dcf1f7;
+.seatBusy
+    @extend .seat;
+    background-color: #e4e3e3;
+    &:hover
+        background-color: #e4e3e3;
+.chosenSeat
+    @extend .seat;
+    background-color: #0691b5; 
