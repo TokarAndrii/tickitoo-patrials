@@ -20,15 +20,23 @@ const Seat = ({ seatNumber, isFree, handleChoseSeat }) => {
         chosen ? styles.chosenSeat : null
       ].join(" ")}
       onClick={handleClickSeat}
-    />
+    >
+      {seatNumber}
+    </div>
   );
 };
 
 Seat.propTypes = {
-  seatNumber: PropTypes.number.isRequired,
+  seatNumber: PropTypes.number,
   isFree: PropTypes.bool.isRequired,
   handleChoseSeat: PropTypes.func.isRequired
 };
+
+Seat.defaultProps = {
+  seatNumber: "",
+}
+
+
 
 export default Seat;
 

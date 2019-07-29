@@ -8,7 +8,7 @@ const RouteItem = ({
   routeSheduleDescriptionText
 }) => {
   return (
-    <div className="route__schedule-inner">
+    <div className={isActive ? `route__schedule-inner is-active` : `route__schedule-inner`}>
       <div className="route__schedule-time">{routeSheduleTime}</div>
       <div className="route__schedule-check">
         <span />
