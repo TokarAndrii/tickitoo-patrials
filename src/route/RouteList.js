@@ -1,8 +1,11 @@
 import React from 'react';
 import RouteItem from './RouteItem';
+import PropTypes from "prop-types";
 
 const RouteList = ({ listRoute, fullView }) => {
-    const filteredList = fullView ? listRoute.filter((item, index) => index === 0 || index === listRoute.length - 1) : listRoute;
+    const filteredList = fullView === true ?
+        listRoute.filter((item, index) => index === 0 || index === listRoute.length - 1)
+        : listRoute;
     return (
         <>
             {
@@ -10,7 +13,7 @@ const RouteList = ({ listRoute, fullView }) => {
                 listRoute.length > 0 &&
                 filteredList.map((itemRoute, index) => {
                     return (
-                        <RouteItem
+                        <RouteItem key={itemRoute.id}
                             {...itemRoute}
                             isActive={index === 0 || index === filteredList.length - 1}>
                         </RouteItem>)
@@ -20,6 +23,13 @@ const RouteList = ({ listRoute, fullView }) => {
 
     )
 };
+
+RouteList.propTypes = {
+    listRoute: PropTypes.array.isRequired,
+    fullView: PropTypes.bool.isRequired,
+};
+
+
 
 export default RouteList;
 

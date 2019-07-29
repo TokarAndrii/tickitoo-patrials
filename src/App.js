@@ -21,14 +21,13 @@ function App() {
       </div>
 
       <div>
-        <RouteList listRoute={testRouteData} fullView></RouteList>
-
+        <RouteList listRoute={testRouteData} fullView={true}></RouteList>
       </div>
 
       <br></br>
       <br></br>
       <div>
-        <RouteList listRoute={testRouteData} ></RouteList>
+        <RouteList listRoute={testRouteData} fullView={false} ></RouteList>
       </div>
 
 
