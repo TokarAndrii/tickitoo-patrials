@@ -1,14 +1,15 @@
 import React from "react";
 import Seat from "./seat/Seat";
 import styles from "./App.module.sass";
-import testRouteData from './route/testDataRoutes';
-import RouteList from './route/RouteList';
-import Header from './header/Header';
+import testRouteData from "./route/testDataRoutes";
+import RouteList from "./route/RouteList";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 
 function App() {
   return (
     <>
-      <Header></Header>
+      <Header />
       <div className={styles.app}>
         <div
           style={{
@@ -24,15 +25,18 @@ function App() {
         </div>
 
         <div>
-          <RouteList listRoute={testRouteData} fullView={true}></RouteList>
+          <RouteList listRoute={testRouteData} fullView={true} />
         </div>
 
-        <br></br>
-        <br></br>
+        <br />
+        <br />
         <div>
-          <RouteList listRoute={testRouteData} fullView={false} ></RouteList>
+          <RouteList listRoute={testRouteData} fullView={false} />
         </div>
       </div>
+
+      <div style={{ marginTop: "300px" }} />
+      <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />
     </>
   );
 }

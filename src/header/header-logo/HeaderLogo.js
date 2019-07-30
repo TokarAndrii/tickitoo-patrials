@@ -1,10 +1,10 @@
-import React from 'react';
-import  './HeaderLogo.sass';
+import React from "react";
+import "./HeaderLogo.sass";
 
-
-const HeaderLogo = ({linkForLogo, altName, imageSrc}) => 
-    <a href={linkForLogo} alt={altName} className="header__logo">
-        <img src={imageSrc}></img>
-    </a>
+const HeaderLogo = ({ linkForLogo, altName, imageSrc }) => (
+  <a href={linkForLogo} className="header__logo">
+    <img alt={altName} src={imageSrc} />
+  </a>
+);
 
 export default HeaderLogo;
