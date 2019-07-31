@@ -16,7 +16,7 @@ const INITIAL_STATE = {
 class HeaderLanguageSelector extends Component{
   constructor(props){
     super(props)
-    this.handleWindowClick = this.handleWindowClick.bind(this)
+    this.handleWindowClick = this.handleWindowClick.bind(this);
   }
 
   containerRef = createRef();
