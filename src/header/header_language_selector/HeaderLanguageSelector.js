@@ -2,14 +2,23 @@ import React, {Component, createRef} from "react";
 import "./HeaderLanguageSelector.sass";
 import angleIcon from './angel.svg';
 
+const availLanguage = ["Рус", "Укр"];
+
+const [initLanguage,] = availLanguage;
+
 const INITIAL_STATE = {
-  language: "Ru",
+  language: initLanguage,
   showLanguagesList: false,
 }
 
-const availLanguage = ["Ru", "Ua"];
+
 
 class HeaderLanguageSelector extends Component{
+  constructor(props){
+    super(props)
+    this.handleWindowClick = this.handleWindowClick.bind(this)
+  }
+
   containerRef = createRef();
 
   modalRef = createRef();
