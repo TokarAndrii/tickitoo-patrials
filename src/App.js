@@ -5,9 +5,10 @@ import testRouteData from "./route/testDataRoutes";
 import RouteList from "./route/RouteList";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
+import Bus from "./bus/Bus";
 
 function App() {
-  return  (
+  return (
     <>
       <Header />
       <div className={styles.app}>
@@ -34,8 +35,22 @@ function App() {
           <RouteList listRoute={testRouteData} fullView={false} />
         </div>
       </div>
+      <div style={{ marginTop: "300px" }} />
 
-      <div style={{ marginTop: '300px' }} />
+      {/* some bus holder */}
+      <div
+        style={{
+          margin: "24px 0",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <Bus
+          title="Выберите место на схеме автобуса"
+          busName="Автобус Hyndai Universe Bus"
+        />
+      </div>
       <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />
     </>
   );
