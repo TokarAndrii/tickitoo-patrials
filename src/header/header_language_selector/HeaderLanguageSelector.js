@@ -21,8 +21,6 @@ class HeaderLanguageSelector extends Component{
 
   containerRef = createRef();
 
-  modalRef = createRef();
-
   state = {...INITIAL_STATE}
 
   handleSetLanguage = language => {
@@ -67,12 +65,12 @@ class HeaderLanguageSelector extends Component{
             ))}
           </select>
           <div className="visible-holder">
-            <div>{language}</div>
+          <div>{language}</div>
             <div>
               <img className={showLanguagesList ? 'angleUp'  : 'angleDown'} src={angleIcon} width = {12}  alt="language angle"></img>
             </div>
             {showLanguagesList && (
-                          <div className="languages-list" ref={this.modalRef}>
+                          <div className="languages-list">
                             {availLanguage.map(curr=> (
                               <div key={curr} className="hidden-holder-item" onClick={()=> this.handleSetLanguage(curr)}>{curr}</div>
                             ))}
