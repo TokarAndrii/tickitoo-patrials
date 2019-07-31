@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderLogo from "./header-logo/HeaderLogo";
 import HeaderSupport from "./headerSupport/HeaderSupport";
+import HeaderLanguageSelector from './header_language_selector/HeaderLanguageSelector';
 import logoImage from "./header-logo/logo.png";
 import "./Header.sass";
 
@@ -21,7 +22,8 @@ const Header = function () {
             phoneNumber="0 800 123 456"
             description="Бесплатно со всех стационарных и мобильных операторов Украины"
           />
-  
+
+          <HeaderLanguageSelector/>
           <div className="header__burger">
             <span />
             <span />
