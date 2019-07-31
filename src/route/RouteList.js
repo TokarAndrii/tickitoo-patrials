@@ -2,7 +2,7 @@ import React from 'react';
 import RouteItem from './RouteItem';
 import PropTypes from "prop-types";
 
-const RouteList = ({ listRoute, fullView }) => {
+const RouteList = function ({ listRoute, fullView }) {
     const filteredList = fullView === true ?
         listRoute.filter((item, index) => index === 0 || index === listRoute.length - 1)
         : listRoute;

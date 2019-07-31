@@ -1,12 +1,12 @@
 import React from "react";
 import "./RouteItem.sass";
 
-const RouteItem = ({
+const RouteItem = function ({
   isActive,
   routeSheduleTime,
   routeSheduleDescriptionTitle,
   routeSheduleDescriptionText
-}) => {
+})  {
   return (
     <div className={isActive ? `route__schedule-inner is-active` : `route__schedule-inner`}>
       <div className="route__schedule-time">{routeSheduleTime}</div>

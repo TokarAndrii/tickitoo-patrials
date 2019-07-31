@@ -7,7 +7,7 @@ import Header from "./header/Header";
 import Footer from "./footer/Footer";
 
 function App() {
-  return (
+  return  (
     <>
       <Header />
       <div className={styles.app}>
@@ -35,7 +35,7 @@ function App() {
         </div>
       </div>
 
-      <div style={{ marginTop: "300px" }} />
+      <div style={{ marginTop: '300px' }} />
       <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />
     </>
   );
