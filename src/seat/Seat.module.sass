@@ -6,7 +6,7 @@
     width: 32px;
     height: 32px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid #0691b5;
     text-align: center;
     display: flex;
     align-items: center;
@@ -15,11 +15,15 @@
     margin-bottom: 5px;
     &:hover
         background-color: #dcf1f7;
+        color: black;
 .seatBusy
     @extend .seat;
     background-color: #e4e3e3;
+    border: 1px solid transparent;
+    color: grey;
     &:hover
         background-color: #e4e3e3;
 .chosenSeat
     @extend .seat;
-    background-color: #0691b5; 
+    background-color: #0691b5;
+    color: #fff;

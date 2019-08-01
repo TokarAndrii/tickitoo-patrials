@@ -1,4 +1,5 @@
 import React from "react";
+import Proptypes from 'prop-types';
 import "./RouteItem.sass";
 
 const RouteItem = function ({
@@ -20,5 +21,12 @@ const RouteItem = function ({
     </div>
   );
 };
+
+RouteItem.propTypes = {
+  isActive: Proptypes.bool.isRequired,
+  routeSheduleTime:Proptypes.string.isRequired,
+  routeSheduleDescriptionTitle: Proptypes.string.isRequired,
+  routeSheduleDescriptionText: Proptypes.string.isRequired,
+}
 
 export default RouteItem;

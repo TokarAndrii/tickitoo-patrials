@@ -38,7 +38,7 @@ class HeaderLanguageSelector extends Component{
     window.removeEventListener('click', this.handleWindowClick);
   }
 
-  handleWindowClick = e => {
+  handleWindowClick = function(e)  {
     if(this.containerRef.current){
              const isTargetInsideContainer = this.containerRef.current.contains(e.target);
              if(!isTargetInsideContainer) this.handleCloseShowLanguagesList();
@@ -59,24 +59,33 @@ class HeaderLanguageSelector extends Component{
     const {language,showLanguagesList} = this.state;
     return (
       <div className="languages-holder" onClick={this.handleToggleShowLanguagesList} ref={this.containerRef}>
-          <select name="language" value={language} className="select2-hidden-accessible">
+          {/* <select name="language" value={language} className="select2-hidden-accessible">
             {availLanguage.map(language => (
                  <option key={language} value={language}>{language}</option>
             ))}
-          </select>
+          </select> */}
           <div className="visible-holder">
           <div>{language}</div>
             <div>
-              <img className={showLanguagesList ? 'angleUp'  : 'angleDown'} src={angleIcon} width = {12}  alt="language angle"></img>
+              <img 
+              className={showLanguagesList ? 'angleUp'  : 'angleDown'} 
+              src={angleIcon} width = {12}  
+              alt="language angle"
+              />
             </div>
             {showLanguagesList && (
-                          <div className="languages-list">
-                            {availLanguage.map(curr=> (
-                              <div key={curr} className="hidden-holder-item" onClick={()=> this.handleSetLanguage(curr)}>{curr}</div>
-                            ))}
-                        </div>
+              <div className="languages-list">
+                {availLanguage.map(curr=> (
+                  <div 
+                  key={curr} 
+                  className="hidden-holder-item" 
+                  onClick={()=> this.handleSetLanguage(curr)}
+                  >
+                    {curr}
+                  </div>
+                ))}
+              </div>
             )}
-
           </div>
       </div>
     );

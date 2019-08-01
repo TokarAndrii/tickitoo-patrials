@@ -1,11 +1,19 @@
 import React from "react";
-import Seat from "./seat/Seat";
 import styles from "./App.module.sass";
 import testRouteData from "./route/testDataRoutes";
 import RouteList from "./route/RouteList";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Bus from "./bus/Bus";
+import mockDataSeats from "./bus/mockDataSeatsCart";
+
+
+//some stuff to get array from income request
+const {maps_seat} = mockDataSeats;
+const [first_element ] = maps_seat;
+const {map_seat} = first_element;
+
+
 
 function App() {
   return (
@@ -20,9 +28,6 @@ function App() {
             alignItems: "center"
           }}
         >
-          <Seat seatNumber={32} isFree handleChoseSeat={() => null} />
-          <Seat seatNumber={33} isFree handleChoseSeat={() => null} />
-          <Seat seatNumber={34} isFree={false} handleChoseSeat={() => null} />
         </div>
 
         <div>
@@ -49,6 +54,7 @@ function App() {
         <Bus
           title="Выберите место на схеме автобуса"
           busName="Автобус Hyndai Universe Bus"
+          seatsList={map_seat}
         />
       </div>
       <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />

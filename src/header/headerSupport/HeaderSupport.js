@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import './HeaderSupport.sass';
 
 const HeaderSupport = function ({title, phoneNumber, description})  {
@@ -18,6 +19,11 @@ const HeaderSupport = function ({title, phoneNumber, description})  {
     )
 }
 
+HeaderSupport.propTypes = {
+    title: Proptypes.string.isRequired,
+    phoneNumber: Proptypes.string.isRequired,
+    description: Proptypes.string.isRequired,
+}
 
 
 export default HeaderSupport;

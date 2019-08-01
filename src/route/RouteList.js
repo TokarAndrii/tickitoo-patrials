@@ -13,10 +13,12 @@ const RouteList = function ({ listRoute, fullView }) {
                 listRoute.length > 0 &&
                 filteredList.map((itemRoute, index) => {
                     return (
-                        <RouteItem key={itemRoute.id}
-                            {...itemRoute}
-                            isActive={index === 0 || index === filteredList.length - 1}>
-                        </RouteItem>)
+                            <RouteItem 
+                                key={itemRoute.id}
+                                {...itemRoute}
+                                isActive={index === 0 || index === filteredList.length - 1}
+                            />
+                        )
                 })
             }
         </>
@@ -28,7 +30,6 @@ RouteList.propTypes = {
     listRoute: PropTypes.array.isRequired,
     fullView: PropTypes.bool.isRequired,
 };
-
 
 
 export default RouteList;

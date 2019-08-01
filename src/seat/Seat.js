@@ -27,7 +27,7 @@ const Seat = function ({ seatNumber, isFree, handleChoseSeat })  {
 };
 
 Seat.propTypes = {
-  seatNumber: PropTypes.number,
+  seatNumber: PropTypes.string,
   isFree: PropTypes.bool.isRequired,
   handleChoseSeat: PropTypes.func.isRequired
 };
