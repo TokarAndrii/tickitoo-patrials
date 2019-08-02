@@ -22,6 +22,7 @@ const arrayTransform = array => {
 
     array.map((curr, index) => {
       if(index > 0 && index % qntSeatsInRow === 0){
+        //chunk.reverse()
         withRows.push(chunk);
         chunk = [];
       }
