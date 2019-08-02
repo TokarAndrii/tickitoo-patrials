@@ -5,18 +5,22 @@ import RouteList from "./route/RouteList";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Bus from "./bus/Bus";
-import mockDataSeats from "./bus/mockDataSeatsCart";
+import mockDataSeats2 from "./bus/mockDataSeatsCart2";
+import utils from './utils/index';
 
 
 //some stuff to get array from income request
-const {maps_seat} = mockDataSeats;
+const {maps_seat} = mockDataSeats2;
 const [first_element ] = maps_seat;
 const {map_seat} = first_element;
+
+const sortedArray = utils.sortArray(map_seat);
+const chunkedArray = utils.arrayTransform(sortedArray)
 
 
 
 function App() {
-  return (
+  return  (
     <>
       <Header />
       <div className={styles.app}>
@@ -54,7 +58,7 @@ function App() {
         <Bus
           title="Выберите место на схеме автобуса"
           busName="Автобус Hyndai Universe Bus"
-          seatsList={map_seat}
+          seatsList={chunkedArray}
         />
       </div>
       <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />

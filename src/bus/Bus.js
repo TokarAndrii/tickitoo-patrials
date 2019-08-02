@@ -5,7 +5,6 @@ import EmptyPlace from '../not_seat/EmptyPlace';
 import BusLegendItems from "./BusLegendItems";
 import seatTypesEnum from "../seat/seat_types_enumeration";
 import seatStatusEnum from "../seat/seat_status_enumerations";
-import arrayTransform from '../utils/';
 import steeringWwheelIcon from './steering wheel.svg';
 import styles from "./Bus.module.sass";
 
@@ -13,9 +12,8 @@ import styles from "./Bus.module.sass";
 class Bus extends Component {
   render() {
     const { seatsList, title, busName } = this.props;
-    const transformedSeatsMap = arrayTransform(seatsList);
 
-    return  (
+    return console.log("seatsList" ,seatsList)  || (
       <div className={styles.busHolder}>
         <h3>{title}</h3>
         <div className={styles.bus}>
@@ -26,12 +24,11 @@ class Bus extends Component {
             width = "32px"
             height = "32px"
             className={styles.steeringWwheel}
-            >
-            </img>
+            />
           </div>
           <div className={styles.busSalonPassenger}>
              {
-               transformedSeatsMap.map((row, index) => {
+               seatsList.map((row, index) => {
                   return (
                     <div className={styles.seatsRow} key={index}>
                       {
