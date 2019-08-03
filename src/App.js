@@ -56,7 +56,7 @@ class App extends Component {
         >
           <Bus
             title="Выберите место на схеме автобуса"
-            busName="Автобус Hyndai Universe Bus"
+            busName="Hyndai Universe Bus"
             seatsList={chunkedArray}
           />
         </div>
