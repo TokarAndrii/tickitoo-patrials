@@ -5,7 +5,9 @@ import RouteList from "./route/RouteList";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Bus from "./bus/Bus";
-import smallBusMockData from "./bus/mockDataSeatsCart2";
+import Button from './buttons/Button';
+import ButtonBack from './buttons/ButtonBack';
+//import smallBusMockData from "./bus/mockDataSeatsCart2";
 import bigBusMockData from "./bus/bigBusMockData";
 import utils from "./utils/index";
 
@@ -45,6 +47,26 @@ class App extends Component {
         </div>
         <div style={{ marginTop: "300px" }} />
 
+        <ButtonBack className={styles.buttonBack} message="назад"></ButtonBack>   
+        
+        <div
+          style={{
+            margin: "24px 0",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center"
+          }}
+        >
+          <Button 
+            message="button primary"
+            className={styles.primary}
+          />          
+          <Button 
+          message="button secondary"
+          className={styles.secondary}
+          />     
+         </div>
+
         {/* some bus holder */}
         <div
           style={{
@@ -54,6 +76,8 @@ class App extends Component {
             alignItems: "center"
           }}
         >
+
+          
           <Bus
             title="Выберите место на схеме автобуса"
             busName="Hyndai Universe Bus"
