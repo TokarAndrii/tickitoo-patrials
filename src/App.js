@@ -47,7 +47,11 @@ class App extends Component {
         </div>
         <div style={{ marginTop: "300px" }} />
 
-        <ButtonBack className={styles.buttonBack} message="назад"></ButtonBack>   
+        <ButtonBack 
+          className={styles.buttonBack} 
+          message="назад"
+          linkTo="/"
+        />
         
         <div
           style={{
