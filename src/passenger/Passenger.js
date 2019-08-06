@@ -16,7 +16,12 @@ const Passenger = function(
 };
 
 Passenger.propTypes = {
-    objectInfo: PropTypes.object.isRequired,
+    objectInfo: PropTypes.shape({
+        fullName: PropTypes.string.isRequired,
+        seatNumber: PropTypes.string.isRequired,
+        document: PropTypes.string.isRequired,
+        ageCategory: PropTypes.string.isRequired,
+    }).isRequired,
     seatMessage: PropTypes.string.isRequired,
 }
 
