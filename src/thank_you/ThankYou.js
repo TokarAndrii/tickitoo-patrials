@@ -6,7 +6,7 @@ import styles from './ThankYou.module.sass';
 class ThankYou extends Component {
     render(){
         const {
-            email, linkObjectTicket, linkBuyBackTicket, 
+            linkObjectTicket, linkBuyBackTicket, email,  
             title, textAboutDownLoad, downloadBtnMessage, 
             textAboutSendToMail, textAboutPrintTickets,
             textAboutThank, backWaysBtnMessage, showbackWaysBtn
