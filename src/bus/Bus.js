@@ -13,7 +13,7 @@ class Bus extends Component {
     const { seatsList, title, busName } = this.props;
 
     return (
-      console.log("seatsList", seatsList) || (
+     (
         <div className={styles.busHolder}>
           <h3>{title}</h3>
           <div className={styles.bus}>

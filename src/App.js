@@ -5,8 +5,8 @@ import RouteList from "./route/RouteList";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Bus from "./bus/Bus";
-import Button from './buttons/Button';
 import ButtonBack from './buttons/ButtonBack';
+import Passenger from './passenger/Passenger';
 import TnankYou from './thank_you/ThankYou';
 //import smallBusMockData from "./bus/mockDataSeatsCart2";
 import bigBusMockData from "./bus/bigBusMockData";
@@ -20,6 +20,13 @@ const [first_element] = maps_seat;
 const { map_seat } = first_element;
 const sortedArray = utils.sortArray(map_seat);
 const chunkedArray = utils.arrayTransform(sortedArray);
+
+const mockPassengerData = {
+  fullName: "Иванов Иван",
+  seatNumber: 39,
+  document: "паспорт ME 123456",
+  ageCategory: "взрослый"
+}
 
 class App extends Component {
   render() {
@@ -55,6 +62,10 @@ class App extends Component {
         />
        
         <main>
+          <Passenger 
+            objectInfo={mockPassengerData}
+            seatMessage="место"
+          />
           <TnankYou
             title="Билеты успешно оплачены!"
             textAboutDownLoad="Вы можете скачать их, нажав на кнопку"
