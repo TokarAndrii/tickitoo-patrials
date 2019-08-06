@@ -1,10 +1,10 @@
 import React from "react";
 import Proptypes from 'prop-types';
-import "./HeaderLogo.sass";
+import styles from "./HeaderLogo.module.sass";
 
 const HeaderLogo = function ({ linkForLogo, altName, imageSrc }) {
   return (
-    <a href={linkForLogo} className="header__logo">
+    <a href={linkForLogo} className={styles['header__logo']}>
       <img alt={altName} src={imageSrc} />
     </a>
   );

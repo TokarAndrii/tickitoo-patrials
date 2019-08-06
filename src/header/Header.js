@@ -3,18 +3,18 @@ import HeaderLogo from "./header-logo/HeaderLogo";
 import HeaderSupport from "./headerSupport/HeaderSupport";
 import HeaderLanguageSelector from './header_language_selector/HeaderLanguageSelector';
 import logoImage from "./header-logo/logo.png";
-import "./Header.sass";
+import styles from "./Header.module.sass";
 
 const Header = function () {
   return  (
     <header>
-      <div className="container">
-        <div className="header__content">
+      <div className={styles.container}>
+        <div className={styles["header__content"]}>
           <HeaderLogo
             linkForLogo="/index"
             altName="header_logo_img"
             imageSrc={logoImage}
-            className="header"
+            className={styles.header}
           />
   
           <HeaderSupport
@@ -24,7 +24,7 @@ const Header = function () {
           />
 
           <HeaderLanguageSelector/>
-          <div className="header__burger">
+          <div className={styles['header__burger']}>
             <span />
             <span />
           </div>

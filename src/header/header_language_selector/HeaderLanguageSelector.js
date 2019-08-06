@@ -1,5 +1,5 @@
 import React, {Component, createRef} from "react";
-import "./HeaderLanguageSelector.sass";
+import styles from "./HeaderLanguageSelector.module.sass";
 import angleIcon from './angel.svg';
 
 const availLanguage = ["Рус", "Укр"];
@@ -58,27 +58,31 @@ class HeaderLanguageSelector extends Component{
   render(){
     const {language,showLanguagesList} = this.state;
     return (
-      <div className="languages-holder" onClick={this.handleToggleShowLanguagesList} ref={this.containerRef}>
+      <div 
+        className={styles['languages-holder']} 
+        onClick={this.handleToggleShowLanguagesList} 
+        ref={this.containerRef}
+      >
           {/* <select name="language" value={language} className="select2-hidden-accessible">
             {availLanguage.map(language => (
                  <option key={language} value={language}>{language}</option>
             ))}
           </select> */}
-          <div className="visible-holder">
+          <div className={styles['visible-holder']}>
           <div>{language}</div>
             <div>
               <img 
-              className={showLanguagesList ? 'angleUp'  : 'angleDown'} 
+              className={showLanguagesList ? styles.angleUp  : styles.angleDown} 
               src={angleIcon} width = {12}  
               alt="language angle"
               />
             </div>
             {showLanguagesList && (
-              <div className="languages-list">
+              <div className={styles['languages-list']}>
                 {availLanguage.map(curr=> (
                   <div 
                   key={curr} 
-                  className="hidden-holder-item" 
+                  className={styles['hidden-holder-item']}
                   onClick={()=> this.handleSetLanguage(curr)}
                   >
                     {curr}

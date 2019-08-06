@@ -1,20 +1,20 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import './HeaderSupport.sass';
+import styles from './HeaderSupport.module.sass';
 
 const HeaderSupport = function ({title, phoneNumber, description})  {
     return (
-        <div className="header__support">
-            <div className="header__support-inners">
-                <div className="header__support-inner">
-                    <div className="header__support-title">{title}</div>
-                    <a href="tel" className="header__support-number">{phoneNumber}</a>
+        <div className={styles['header__support']}>
+            <div className={styles['header__support-inners']}>
+                <div className={styles['header__support-inner']}>
+                    <div className={styles['header__support-title']}>{title}</div>
+                    <a href="tel" className={styles['header__support-number']}>{phoneNumber}</a>
                 </div>
-                <div className="header__support-inner">
-                    <div className="header__support-description">{description}</div>
+                <div className={styles['header__support-inner']}>
+                    <div className={styles['header__support-description']}>{description}</div>
                 </div>
             </div>
-                <div className="header__languages"></div>
+                <div className={styles['header__languages']}></div>
         </div>
     )
 }
