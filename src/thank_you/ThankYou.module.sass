@@ -1,0 +1,141 @@
+.transactions-success__content
+    padding: 30px 0;
+    max-width: 1140px;
+    
+.transactions-success__holder
+    display: block;
+    margin: 0 auto;
+    width: 640px;
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.1);
+    background-color: #fff;
+    padding: 50px 0;
+    border-radius: 5px;
+    text-align: center;
+
+    strong
+      display: block;
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+
+    p 
+      display: block;
+      margin-top: 30px;
+      color: #666;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.3; 
+
+.primary
+    background-color: #f59e1b;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.35px;
+    padding: 13px 23px;
+    display: block;
+    border-radius: 3px;
+    transition: .3s;
+    position: relative
+
+    &:active 
+        background-color: #ec6a00;
+        outline: none; 
+    &:hover 
+        background-color: #ec6a00;
+        outline: none;
+
+    &::after
+        position: absolute;
+        left: calc(100% + 12px);
+        bottom: 15px;
+        content: '';
+        width: 34px;
+        height: 36px;
+        background-image: url("./icon-down-left.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+@media only screen and (max-width: 520px)
+    .primary
+        &:hover
+            background-color: #f59e1b;
+
+.secondary
+    background-color: #0690b5;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.35px;
+    padding: 13px 23px;
+    display: block;
+    border-radius: 3px;
+    transition: .3s;
+
+    &:hover
+        background-color: #0ba6d2;
+        color: #fff;
+        outline: none;
+  
+    &:active 
+        background-color: #0ba6d2;
+        color: #fff;
+        outline: none;
+
+@media only screen and (max-width: 520px)
+    .secondary
+        &:hover
+            background-color: transparent;
+            color: #0691b5;
+
+.transactions-success__action
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: cente;
+
+@media only screen and (max-width: 520px)
+    .transactions-success__content
+        padding: 10px 0 30px 0;
+        max-width: 485px;
+        width: 485px;
+
+    .transactions-success__holder
+        padding: 16px 0px 12px 0px;
+        width: 485px;
+
+        strong
+            font-size: 16px;
+
+        p
+            font-size: 14px;
+            margin-top: 18px;
+            width: 460px;
+
+            b 
+                font-weight: 700;
+                display: block;
+
+    .secondary
+        background-color: #00bfff;
+
+        &:hover
+            background-color: #0ba6d2;
+            color: #fff;
+            outline: none;
+  
+        &:active 
+            background-color: #0ba6d2;
+            color: #fff;
+            outline: none;
+            
+    .primary
+        &::after
+            display: none;

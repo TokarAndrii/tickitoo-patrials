@@ -7,6 +7,7 @@ import Footer from "./footer/Footer";
 import Bus from "./bus/Bus";
 import Button from './buttons/Button';
 import ButtonBack from './buttons/ButtonBack';
+import TnankYou from './thank_you/ThankYou';
 //import smallBusMockData from "./bus/mockDataSeatsCart2";
 import bigBusMockData from "./bus/bigBusMockData";
 import utils from "./utils/index";
@@ -52,24 +53,20 @@ class App extends Component {
           message="назад"
           linkTo="/"
         />
-        
-        <div
-          style={{
-            margin: "24px 0",
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center"
-          }}
-        >
-          <Button 
-            message="button primary"
-            className={styles.primary}
-          />          
-          <Button 
-          message="button secondary"
-          className={styles.secondary}
-          />     
-         </div>
+       
+        <main>
+          <TnankYou
+            title="Билеты успешно оплачены!"
+            textAboutDownLoad="Вы можете скачать их, нажав на кнопку"
+            downloadBtnMessage="Скачать билеты"
+            textAboutSendToMail="Мы также выслали копию билетов на почту"
+            email="example@mail.com"
+            textAboutPrintTickets="Не забудьте распечатать их перед посадкой в автобус"
+            textAboutThank="Благодарим за покупку! Приятного пути :)"
+            backWaysBtnMessage="Искать обратный билет"
+          ></TnankYou>
+        </main>
+     
 
         {/* some bus holder */}
         <div
