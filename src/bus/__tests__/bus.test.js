@@ -113,14 +113,5 @@ describe("Bus tests", ()=> {
         expect(wrapper.find(EmptyPlace).length).toEqual(1);
     });
 
-
-
-
-
-
-    
-
-
-
 })
 
