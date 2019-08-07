@@ -31,7 +31,7 @@ const mockPassengerData = {
 
 class App extends Component {
   render() {
-    return (
+    return console.log(chunkedArray) || (
       <>
         <Header />
         <div className={styles.app}>
