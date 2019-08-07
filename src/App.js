@@ -11,6 +11,7 @@ import TnankYou from './thank_you/ThankYou';
 //import smallBusMockData from "./bus/mockDataSeatsCart2";
 import bigBusMockData from "./bus/bigBusMockData";
 import utils from "./utils/index";
+import Seat from './seat/Seat';
 
 //some stuff to get array from income request
 //const { maps_seat } = mockDataSeats2;

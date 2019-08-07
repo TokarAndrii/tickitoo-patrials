@@ -13,53 +13,56 @@ class Bus extends Component {
     const { seatsList, title, busName } = this.props;
 
     return (
-     (
-        <div className={styles.busHolder}>
-          <h3>{title}</h3>
-          <div className={styles.bus}>
-            <div className={styles.busDriversCab}>
-              <img
-                src={steeringWwheelIcon}
-                alt="steering wheel"
-                width="32px"
-                height="32px"
-                className={styles.steeringWwheel}
-              />
+      <>
+      {seatsList && seatsList.length > 0 &&  (
+          <div className={styles.busHolder}>
+            <h3>{title}</h3>
+            <div className={styles.bus}>
+              <div className={styles.busDriversCab}>
+                <img
+                  src={steeringWwheelIcon}
+                  alt="steering wheel"
+                  width="32px"
+                  height="32px"
+                  className={styles.steeringWwheel}
+                />
+              </div>
+              <div className={styles.busSalonPassenger}>
+                {seatsList.map((row, index) => {
+                  return (
+                    <div className={styles.seatsRow} key={index}>
+                      {row.map(seat => {
+                        return (
+                          <div key={seat.id}>
+                            {seat.seat_type === seatTypesEnum.emptyPlace && (
+                              <EmptyPlace />
+                            )}
+                            {seat.seat_type !== seatTypesEnum.emptyPlace && (
+                              <Seat
+                                isFree={seat.status === seatStatusEnum.freeSeat}
+                                handleChoseSeat={() => null}
+                                seatNumber={seat.num}
+                              />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <div className={styles.busSalonPassenger}>
-              {seatsList.map((row, index) => {
-                return (
-                  <div className={styles.seatsRow} key={index}>
-                    {row.map(seat => {
-                      return (
-                        <div key={seat.id}>
-                          {seat.seat_type === seatTypesEnum.emptyPlace && (
-                            <EmptyPlace />
-                          )}
-                          {seat.seat_type !== seatTypesEnum.emptyPlace && (
-                            <Seat
-                              isFree={seat.status === seatStatusEnum.freeSeat}
-                              handleChoseSeat={() => null}
-                              seatNumber={seat.num}
-                            />
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+            <div className={styles.busInfoHolder}>
+              <p className={styles.busName}>Автобус {busName}</p>
+              <div className={styles.busLegendItemsHolder}>
+                <BusLegendItems />
+              </div>
             </div>
           </div>
-          <div className={styles.busInfoHolder}>
-            <p className={styles.busName}>Автобус {busName}</p>
-            <div className={styles.busLegendItemsHolder}>
-              <BusLegendItems />
-            </div>
-          </div>
-        </div>
-      )
+      )}
+       </>
     );
+
   }
 }
 
