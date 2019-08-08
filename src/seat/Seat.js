@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./Seat.module.sass";
 
-const Seat = function ({ seatNumber, isFree, handleChoseSeat })  {
+const Seat = function({ seatNumber, isFree, handleChooseSeat }) {
   const [chosen, setChosen] = useState(false);
 
   const toogleChosen = () => {
@@ -10,7 +10,7 @@ const Seat = function ({ seatNumber, isFree, handleChoseSeat })  {
   };
   const handleClickSeat = () => {
     toogleChosen();
-    handleChoseSeat();
+    handleChooseSeat();
   };
 
   return (
@@ -29,14 +29,12 @@ const Seat = function ({ seatNumber, isFree, handleChoseSeat })  {
 Seat.propTypes = {
   seatNumber: PropTypes.string,
   isFree: PropTypes.bool.isRequired,
-  handleChoseSeat: PropTypes.func.isRequired
+  handleChooseSeat: PropTypes.func.isRequired
 };
 
 Seat.defaultProps = {
-  seatNumber: "",
-}
-
-
+  seatNumber: ""
+};
 
 export default Seat;
 

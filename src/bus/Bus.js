@@ -14,7 +14,7 @@ class Bus extends Component {
 
     return (
       <>
-      {seatsList && seatsList.length > 0 &&  (
+        {seatsList && seatsList.length > 0 && (
           <div className={styles.busHolder}>
             <h3>{title}</h3>
             <div className={styles.bus}>
@@ -40,7 +40,7 @@ class Bus extends Component {
                             {seat.seat_type !== seatTypesEnum.emptyPlace && (
                               <Seat
                                 isFree={seat.status === seatStatusEnum.freeSeat}
-                                handleChoseSeat={() => null}
+                                handleChooseSeat={() => null}
                                 seatNumber={seat.num}
                               />
                             )}
@@ -59,10 +59,9 @@ class Bus extends Component {
               </div>
             </div>
           </div>
-      )}
-       </>
+        )}
+      </>
     );
-
   }
 }
 
