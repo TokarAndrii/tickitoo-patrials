@@ -6,7 +6,7 @@ import BusLegendItems from "./BusLegendItems";
 import seatTypesEnum from "../seat/seat_types_enumeration";
 import seatStatusEnum from "../seat/seat_status_enumerations";
 import steeringWwheelIcon from "./steering-wheel.svg";
-import styles from "./Bus.module.sass";
+import styles from "./Bus.module.scss";
 
 class Bus extends Component {
   render() {

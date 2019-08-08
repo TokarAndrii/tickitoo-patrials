@@ -1,38 +1,57 @@
-.busLegendItems
+.busLegendItems {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 0 5px;
-.busLegendItemHolder
+}
+
+.busLegendItemHolder {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-right: 24px;
-    &:last-child
-        margin-right: 0px;
-.seatTypeHolder
+
+    &:last-child {
+        margin-right: 0px; 
+    }
+}
+
+.seatTypeHolder {
     box-sizing: border-box;
     display: inline-block;
     width: 16px;
     height: 16px;
     border-radius: 5px;
     margin-right: 5px;
-.seatTypeFree
+}
+
+.seatTypeFree {
     background-color: #fff;
-    border: 1px solid #0691b5;
-.seatTypeBusy
+    border: 1px solid #0691b5; 
+}
+
+.seatTypeBusy {
     background-color: #e4e3e3;
-    border: 1px solid transparent;
-.seatTypeTaken
+    border: 1px solid transparent; 
+}
+.seatTypeTaken {
     background-color: #0691b5;
-    border: 1px solid transparent;
-@media only screen and (max-width: 320px)
-    .busLegendItems
+    border: 1px solid transparent; 
+}
+
+@media only screen and (max-width: 320px) {
+    .busLegendItems {
         flex-direction: column;
         justify-content: center;
-    .busLegendItemHolder
+    }
+
+    .busLegendItemHolder {
         margin: 0;
-        width: 100%;
-        p
-            margin: 6px;
+        width: 100%; 
+
+        p {
+            margin: 6px; 
+        }
+    }
+}
         

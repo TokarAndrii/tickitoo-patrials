@@ -1,50 +1,66 @@
-.footer
-    background-color: #0a3c4a;
+.footer {
+    background-color: #0a3c4a; 
+}
 
-.container
+.container {
     margin: 0 auto;
     max-width: 1180px;
     padding: 0 20px;
-.footer__content
+}
+.footer__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px 0;
+}
 
-.footer__copyright 
+.footer__copyright {
     display: inline-block;
     color: #fffefe;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 0.9px; 
-.footer__payments
+}
+.footer__payments {
     display: flex;
     align-items: center;
 
-    img
+    img {
         display: inline-block;
         margin-left: 18px;
+    }
+}
 
-.footer__payments-mc
+.footer__payments-mc {
     max-width: 154px;
-.footer__payments-vs
+}
+.footer__payments-vs {
     max-width: 70px;
+}
 
-@media only screen and (max-width: 520px)
-    .container
+@media only screen and (max-width: 520px) {
+    .container {
         padding: 0 10px;
+    }
 
-@media only screen and (max-width: 650px)
-    .footer__content
+    .footer__content {
+        padding: 18px 0;
+    }
+
+    .footer__copyright {
+        font-size: 11px; 
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .footer__content {
         display: block;
         text-align: center;
-    .footer__payments
+    }
+    .footer__payments {
         display: none;
-@media only screen and (max-width: 520px)
-    .footer__content
-        padding: 18px 0;
+    }
+}
 
-    .footer__copyright
-        font-size: 11px;

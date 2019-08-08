@@ -1,9 +1,10 @@
-.header__languages
+.header__languages {
     display: inline-block;
     margin-left: 20px;
     color: #333333;
+}
 
-.select2-hidden-accessible
+.select2-hidden-accessible {
     border: 0 !important;
     clip: rect(0 0 0 0) !important;
     -webkit-clip-path: inset(50%) !important;
@@ -13,29 +14,33 @@
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important;
-    white-space: nowrap !important;
+    white-space: nowrap !important; 
+}
 
-.languages-holder
+.languages-holder {
     padding: 8px 10px;
     border: 1px solid #888;
     border-radius: 3px;
     position: relative;
     box-sizing: border-box;
     width: 70px;
+}
 
-.visible-holder
+.visible-holder {
     width: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-.hidden-holder
+}
+.hidden-holder {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
     width: 0;
-    heigh: 0;
-.hidden-holder-item
+    height: 0;
+}
+.hidden-holder-item {
     box-sizing: border-box;
     width: 67px;
     border-radius: 3px;
@@ -44,16 +49,19 @@
     align-items: center;
     padding: 8px 12px;
 
-    &:hover
+    &:hover {
         background-color: rgba(6, 145, 181, .3);
+    }
+}
 
-.languages-list
+.languages-list {
     position: absolute;
     bottom: -80px;
     left: 0;
     border: 1px solid #888;
+}
 
-.visuallyhidden:not(:focus):not(:active)
+.visuallyhidden:not(:focus):not(:active){
   position: absolute;
   width: 1px;
   height: 1px;
@@ -64,17 +72,23 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
 
-.angle
+.angle {
     transform: rotate(90deg);
+}
 
-.angleDown
+.angleDown {
     transform: rotate(90deg);
     transition: .3s;
-.angleUp
+}
+.angleUp {
     transform: rotate(-90deg);
     transition: .3s;
+}
 
-@media only screen and (max-width: 1000px)
-    .header__languages
+@media only screen and (max-width: 1000px){
+    .header__languages {
         margin-left: 18px;
+    }
+}

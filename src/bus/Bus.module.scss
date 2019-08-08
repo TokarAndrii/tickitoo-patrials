@@ -1,4 +1,4 @@
-.busHolder
+.busHolder {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,8 @@
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
-.bus
+}
+.bus {
     box-sizing: border-box;
     border-radius: 20px;
     border: 1px solid #c1c1c1;
@@ -14,53 +15,65 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-direction: row-reverse;
-.busName
+    flex-direction: row-reverse; 
+}
+.busName {
     margin-left: 10px;
     color: grey;
     font-weight: 600;
-.busInfoHolder
+}
+.busInfoHolder {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-.busLegend
+}
+.busLegend {
     display: flex;
     justify-content: center;
-    align-items: center;
-.busDriversCab
+    align-items: center; 
+}
+.busDriversCab {
     height: 100%;
-    margin-top: -85px;
-.steeringWwheel
-    padding: 0 15px 15px 15px;
-.seatsRow
+    margin-top: -85px; 
+}
+.steeringWwheel {
+    padding: 0 15px 15px 15px; 
+}
+.seatsRow {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: space-between;
     flex-direction: column;
-    margin-bottom: -5px;    
-.busSalonPassenger
+    margin-bottom: -5px;  
+}  
+.busSalonPassenger {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-direction: row-reverse;
-@media only screen and (max-width: 320px)
-    .busInfoHolder
+    flex-direction: row-reverse; 
+}
+@media only screen and (max-width: 320px) {
+    .busInfoHolder {
         align-items: flex-start;
-    h3
+    }
+    h3 {
         width: 165px;
         color: grey;
         font-weight: 600;
-    .bus
+    }
+    .bus {
         margin-top: 120px;
         flex-direction: column;
-        height: auto;
-    .busDriversCab
+        height: auto; 
+    }
+    .busDriversCab {
         width: 100%;
-        margin-top: 0
-    .busName
+        margin-top: 0;
+    }
+    .busName {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -71,17 +84,24 @@
         clip-path: inset(100%);
         clip: rect(0 0 0 0);
         overflow: hidden;
-    .busLegendItemsHolder
+    }
+    .busLegendItemsHolder {
         position: absolute;
         top: 80px;
         left: 30%;
-    .busSalonPassenger
-        flex-direction: column;
-    .seatsRow
+    }
+    .busSalonPassenger {
+        flex-direction: column; 
+    }
+    .seatsRow {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
         margin-bottom: .5px;
-    .steeringWwheel
-        padding: 5px 0 15px 25px;
+    }
+    .steeringWwheel {
+        padding: 15px 5px 15px 25px;
+        transform: rotate(-90deg);
+    }
+}
 

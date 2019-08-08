@@ -1,10 +1,10 @@
 import React, {Component, createRef} from "react";
-import styles from "./HeaderLanguageSelector.module.sass";
+import styles from "./HeaderLanguageSelector.module.scss";
 import angleIcon from './angel.svg';
 
-const availLanguage = ["Рус", "Укр"];
+const AVAIL_LANGUAGES = ["Рус", "Укр"];
 
-const [initLanguage,] = availLanguage;
+const [initLanguage,] = AVAIL_LANGUAGES;
 
 const INITIAL_STATE = {
   language: initLanguage,
@@ -79,7 +79,7 @@ class HeaderLanguageSelector extends Component{
             </div>
             {showLanguagesList && (
               <div className={styles['languages-list']}>
-                {availLanguage.map(curr=> (
+                {AVAIL_LANGUAGES.map(curr=> (
                   <div 
                   key={curr} 
                   className={styles['hidden-holder-item']}

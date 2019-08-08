@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {PropTypes} from 'prop-types';
-import styles from './ButtonBack.module.sass';
+import styles from './ButtonBack.module.scss';
 
 
 const ButtonBack = function({ message, linkTo, className}){

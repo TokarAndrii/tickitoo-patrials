@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./BusLegendItem.module.sass";
+import styles from "./BusLegendItem.module.scss";
 
 const BusLegendItems = function() {
   return (
