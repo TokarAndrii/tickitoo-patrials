@@ -1,15 +1,18 @@
-.header 
+.header {
     background-color: #fff;
-.container
+}
+.container {
     margin: 0 auto;
     max-width: 1180px;
-    padding: 0 20px;
-.header__content
+    padding: 0 20px; 
+}
+.header__content {
     padding: 12px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-.header__burger
+}
+.header__burger {
     display: none;
     position: relative;
     border-radius: 50%;
@@ -19,8 +22,9 @@
     z-index: 20;
     margin-left: 20px;
     flex: 0 0 auto; 
+}
 
-.header__burger::before 
+.header__burger::before {
     content: '';
     width: 22px;
     left: 50%;
@@ -29,9 +33,10 @@
     top: 0;
     position: absolute;
     background-color: #0690b5;
-    transition: opacity ease .3s;
+    transition: opacity ease .3s; 
+}
 
-.header__burger::after 
+.header__burger::after {
     content: '';
     width: 22px;
     left: 50%;
@@ -41,9 +46,10 @@
     position: absolute;
     background-color: #0690b5;
     transition: opacity ease .3s; 
+}
 
-.header__burger 
-    span
+.header__burger {
+    span {
       width: 22px;
       height: 2px;
       top: 50%;
@@ -52,35 +58,51 @@
       position: absolute;
       background-color: #0690b5;
       transition: transform ease .3s; 
+    }
+}
 
-.header__burger
-    .is-open::before
+.header__burger {
+    .is-open::before {
         opacity: 0;
-    .header__burger
-        .is-open:after
-            opacity: 0;
+    }
+    .header__burger {
+        .is-open:after {
+            opacity: 0; 
+        }
+    }
 
-    .header__burger
-        .is-open span:nth-child(1)
+    .header__burger {
+        .is-open span:nth-child(1) {
             transform: rotate(45deg);
+        }
+    }
 
-    .header__burger
-        .is-open span:nth-child(2) 
+    .header__burger {
+        .is-open span:nth-child(2) {
             transform: rotate(-45deg);
+        }
+    }
+}
 
-@media only screen and (max-width: 700px) 
-    .header
+@media only screen and (max-width: 700px) { 
+    .header {
         border-bottom: 1px solid #cdcdcd;
         position: relative;
         z-index: 20;
         height: 60px;
+    }
 
-    .header__burger
+    .header__burger {
         display: block;
-        transition: .3s;
+        transition: .3s; 
+    }
 
-    .header__content
+    .header__content {
         padding: 11px 0;
-@media only screen and (max-width: 520px)
-    .container
-        padding: 0 10px;
+    }
+}
+@media only screen and (max-width: 520px) {
+    .container {
+        padding: 0 10px; 
+    }
+}

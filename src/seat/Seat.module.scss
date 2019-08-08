@@ -1,4 +1,4 @@
-.seat
+.seat {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,18 +12,20 @@
     align-items: center;
     justify-content: center;
     margin-right: 5px; 
-    margin-bottom: 5px;
-    &:hover
+    margin-bottom: 5px; 
+    &:hover {
         background-color: #dcf1f7;
-        color: black;
-.seatBusy
+        color: black; }
+    }
+.seatBusy {
     @extend .seat;
     background-color: #e4e3e3;
     border: 1px solid transparent;
-    color: grey;
-    &:hover
-        background-color: #e4e3e3;
-.chosenSeat
+    color: grey; 
+    &:hover {
+        background-color: #e4e3e3; }
+    }
+.chosenSeat {
     @extend .seat;
     background-color: #0691b5;
-    color: #fff;
+    color: #fff; }

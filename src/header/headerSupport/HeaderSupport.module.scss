@@ -1,20 +1,23 @@
-.header__support 
+.header__support {
     display: flex;
     align-items: center;
     position: relative;
     margin-left: 20px;
     flex: 1 1 auto;
     justify-content: flex-end; 
+}
 
-.header__support-inners
+.header__support-inners {
     display: flex;
     align-items: center;
+}
 
-.header__support-inner
+.header__support-inner {
     display: flex;
     align-items: center;
+}
 
-.header__support-title
+.header__support-title {
     display: inline-block;
     color: #0691b5;
     font-size: 14px;
@@ -23,8 +26,9 @@
     letter-spacing: 0.35px;
     position: relative;
     padding-left: 28px;
+}
 
-.header__support-title::before
+.header__support-title::before {
     position: absolute;
     content: '';
     top: 50%;
@@ -34,9 +38,10 @@
     height: 19px;
     background-image: url("./phone.svg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain; 
+}
 
-.header__support-number
+.header__support-number {
     display: inline-block;
     margin-left: 14px;
     color: #0691b5;
@@ -44,9 +49,10 @@
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 0.45px;
-    text-decoration: none;
+    text-decoration: none; 
+}
 
-.header__support-description 
+.header__support-description {
     display: inline-block;
     max-width: 202px;
     color: #999;
@@ -55,11 +61,16 @@
     line-height: 1.2;
     letter-spacing: 0.25px;
     margin-left: 30px;
+}
 
-@media only screen and (max-width: 700px)
-    .header__support
+@media only screen and (max-width: 700px) {
+    .header__support {
         display: none;
+    }
+}
 
-@media only screen and (max-width: 1000px)
-    .header__support-inners
+@media only screen and (max-width: 1000px) {
+    .header__support-inners {
         display: block;
+    }
+}

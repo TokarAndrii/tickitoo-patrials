@@ -3,7 +3,7 @@ import HeaderLogo from "./header-logo/HeaderLogo";
 import HeaderSupport from "./headerSupport/HeaderSupport";
 import HeaderLanguageSelector from './header_language_selector/HeaderLanguageSelector';
 import logoImage from "./header-logo/logo.png";
-import styles from "./Header.module.sass";
+import styles from "./Header.module.scss";
 
 const Header = function () {
   return  (

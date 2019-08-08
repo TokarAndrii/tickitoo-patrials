@@ -1,6 +1,6 @@
 import React from "react";
 import Proptypes from 'prop-types';
-import styles from "./HeaderLogo.module.sass";
+import styles from "./HeaderLogo.module.scss";
 
 const HeaderLogo = function ({ linkForLogo, altName, imageSrc }) {
   return (

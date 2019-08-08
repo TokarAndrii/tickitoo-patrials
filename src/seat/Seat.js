@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import styles from "./Seat.module.sass";
+import styles from "./Seat.module.scss";
 
 const Seat = function({ seatNumber, isFree, handleChooseSeat }) {
   const [chosen, setChosen] = useState(false);

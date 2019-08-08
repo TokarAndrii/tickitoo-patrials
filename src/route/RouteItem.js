@@ -1,6 +1,6 @@
 import React from "react";
 import Proptypes from 'prop-types';
-import "./RouteItem.sass";
+import "./RouteItem.scss";
 
 const RouteItem = function ({
   isActive,

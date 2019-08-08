@@ -1,6 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import styles from './HeaderSupport.module.sass';
+import styles from './HeaderSupport.module.scss';
 
 const HeaderSupport = function ({title, phoneNumber, description})  {
     return (
