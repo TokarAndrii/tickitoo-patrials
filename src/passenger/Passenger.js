@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Passenger.module.sass'
+import styles from './Passenger.module.scss'
 
 const Passenger = function(
     {seatMessage,  
@@ -10,7 +10,7 @@ const Passenger = function(
     return (
         <div className={styles['payment-data__info-item']}>
             <strong>{fullName}</strong>
-            <p>{`${seatMessage} ${seatNumber}, ${ageCategory}, ${document} `}</p>
+            <p>{`${seatMessage} ${seatNumber}, ${ageCategory}, ${document}`}</p>
         </div>
     )
 };

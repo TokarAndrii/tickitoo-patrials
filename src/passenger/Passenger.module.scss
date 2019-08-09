@@ -1,11 +1,11 @@
-.payment-data__info-item
+.payment-data__info-item {
     display: block;
     margin-top: 22px;
     position: relative;
     padding-left: 35px;
     height: 37px;
 
-    &::before
+    &::before {
         position: absolute;
         left: 4px;
         top: -3px;
@@ -14,26 +14,33 @@
         height: 20px;
         background-image: url("./icon-passenger-blue.svg");
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: contain; 
+    }
 
-    strong
+    strong {
         display: block;
         color: #333;
         font-size: 14px;
         font-weight: 600;
         line-height: 1.2;
-    p 
+    }
+    p {
         display: block;
         margin-top: 7px;
         color: #666;
         font-size: 12px;
         font-weight: 500;
         line-height: 1.2; 
+    }
+}
 
-@media only screen and (max-width: 520px)
-    .payment-data__info-item
+@media only screen and (max-width: 520px){
+    .payment-data__info-item {
         margin-top: 15px;
 
-        strong
-            font-size: 13px;
+        strong {
+            font-size: 13px; 
+        }
+    }
+}
     
