@@ -33,7 +33,7 @@
         }
         .route__schedule-description {
             strong {
-                color: #333; 
+                color: #333;
             }
             p {
                 color: #666;  
@@ -93,11 +93,10 @@
 .route__schedule-time {
     flex: 0 0 36px;
     color: #999;
-    font-size: 12px;
     font-weight: 600;
     line-height: 1.2;
-    min-width: 36px;
-    max-width: 36px;
+    min-width: 50px;
+    max-width: 50px;
     top: 1px;
     position: relative; 
 }

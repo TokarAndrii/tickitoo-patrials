@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../buttons/Button";
+import PropTypes from 'prop-types';
 import styles from "./BusFreeSeating.module.scss";
 
 const BusFreeSeating = function({
@@ -40,5 +41,15 @@ const BusFreeSeating = function({
     </div>
   );
 };
+
+BusFreeSeating.propTypes = {
+  objectInfo: PropTypes.shape({
+    fromCity: PropTypes.string.isRequired,
+    toCity: PropTypes.string.isRequired,
+    dateTrip: PropTypes.string.isRequired,
+    nameBus: PropTypes.string.isRequired,
+    seatsQty: PropTypes.number.isRequired,
+  }).isRequired
+}
 
 export default BusFreeSeating;

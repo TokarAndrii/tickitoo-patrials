@@ -1,16 +1,17 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import RouteItem from './RouteItem';
 import PropTypes from "prop-types";
 
 const RouteList = function ({ listRoute, fullView }) {
-    const filteredList = fullView === true && listRoute ?
-        listRoute.filter((item, index) => index === 0 || index === listRoute.length - 1)
-        : listRoute;
-    return (
-        <>
+
+    const filteredList = !listRoute ? 
+        null :  fullView ? 
+        listRoute : listRoute.filter((item, index) => index === 0 || index === listRoute.length - 1);
+
+    return  (
+        <Fragment>
             {
                 listRoute &&
-                listRoute.length > 0 &&
                 filteredList.map((itemRoute, index) => {
                     return (
                             <RouteItem 
@@ -21,8 +22,7 @@ const RouteList = function ({ listRoute, fullView }) {
                         )
                 })
             }
-        </>
-
+        </Fragment>
     )
 };
 

@@ -1,0 +1,243 @@
+.payment-data__content {
+    padding: 25px 0 40px 0; 
+}
+
+@media only screen and (max-width: 520px) {
+    .payment-data__content {
+        padding: 0 0 15px 0; 
+    }
+}
+
+.payment-data__info {
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.1);
+    background-color: #fff;
+    border-radius: 5px; 
+}
+
+@media only screen and (max-width: 750px) {
+    .payment-data__info {
+        display: block; 
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .payment-data__info {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none; 
+    }
+}
+
+.payment-data__info-lside {
+    flex: 1 1 auto; 
+}
+
+@media only screen and (max-width: 520px) {
+    .payment-data__info-lside {
+      box-shadow: 0 0 5px rgba(1, 1, 1, 0.1);
+      background-color: #fff;
+      border-radius: 5px;
+      margin-bottom: 15px; 
+    }
+}
+
+.payment-data__info-rside {
+    flex: 0 0 450px;
+    padding: 40px 30px;
+    border-left: 1px solid #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+@media only screen and (max-width: 1000px) {
+    .payment-data__info-rside {
+      padding: 38px 17px;
+      flex: 0 0 360px; 
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .payment-data__info-rside {
+      border-top: 1px solid #eaeaea; 
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .payment-data__info-rside {
+      box-shadow: 0 0 5px rgba(1, 1, 1, 0.1);
+      background-color: #fff;
+      border-radius: 5px;
+      border: 0;
+      padding: 16px 10px 14px 10px; 
+    }
+}
+
+.payment-data__info-passenger {
+    padding: 38px 25px 27px 25px;
+    border-bottom: 1px solid #eaeaea; 
+
+    .payment-data__info-strong {
+        margin-top: 42px; 
+    }
+}
+    
+@media only screen and (max-width: 1000px) {
+      .payment-data__info-passenger {
+        padding: 38px 17px 17px 17px; 
+    }
+}
+
+@media only screen and (max-width: 520px) {
+      .payment-data__info-passenger {
+        padding: 0;
+
+        .payment-data__info-strong {
+            margin-top: 0; 
+        } 
+
+        .payment-data__info-title {
+            padding: 14px 50px;
+            border-bottom: 1px solid #eaeaea; 
+        }
+
+        .payment-data__info-bottom {
+            padding: 14px 10px; 
+        }
+    } 
+}
+
+.payment-data__info-passenger .payment-data__info-strong {
+    margin-top: 42px; 
+}
+
+.payment-data__info-title {
+    display: block;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2; 
+}
+
+.payment-data__info-strong {
+    display: block;
+    color: #999;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2; 
+}
+
+@media only screen and (max-width: 520px) {
+    .payment-data__info-strong {
+      font-size: 12px; 
+    } 
+}
+
+.route__schedule {
+    border-top: 1px solid #eaeaea;
+    padding: 22px 18px;
+    overflow: hidden; 
+}
+
+.payment-data__info-route {
+    padding: 25px 25px 40px 25px;
+    border-bottom: 1px solid #eaeaea; 
+
+    .route__schedule {
+        border-top: none;
+        padding: 0;
+        margin-top: 28px; 
+    }
+
+    .route__schedule-time {
+        font-size: 18px;
+        text-align: center;
+        min-width: 50px;
+        max-width: 50px;
+        position: relative;
+        top: -1px; 
+
+        span {
+            font-size: 12px;
+            display: block; 
+        }
+    }
+}
+
+
+.payment-data__info-route:last-child {
+    border-bottom: 0; 
+}
+
+.payment-data__info-items {
+    margin-top: 30px; 
+}
+
+.payment-data__info-description {
+    display: block;
+    margin-top: 20px;
+
+    ul {
+        display: block;
+
+        li {
+            display: block;
+            margin-bottom: 4px;
+            
+            p {
+                margin: 0;
+                padding: 0;
+                color: #666;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 1.2;
+                
+                span {
+                    color: #999; 
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0; 
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .payment-data__info-route {
+      padding: 25px 17px; 
+    } 
+}
+
+@media only screen and (max-width: 520px) {
+    .payment-data__info-route {
+      padding: 14px 10px; 
+
+        .route__schedule {
+            margin-top: 20px; 
+        }
+
+        .route__schedule-time {
+            font-size: 12px;
+            text-align: left;
+            min-width: 34px;
+            max-width: 34px;
+
+            span {
+                font-size: 9px; 
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .payment-data__info-description ul li p {
+      font-size: 11px; 
+    } 
+}

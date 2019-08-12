@@ -12,8 +12,10 @@ import TnankYou from "./thank_you/ThankYou";
 import bigBusMockData from "./bus/bigBusMockData";
 import utils from "./utils/index";
 import Seat from "./seat/Seat";
-import BusFreeSeating from "./bus_free_seating/BusFreeSeating";
-import mockBusFreeSeatingObjectInfo from "./bus_free_seating/mockObjectInfo";
+import BusFreeSeating from "./busFreeSeating/BusFreeSeating";
+import mockBusFreeSeatingObjectInfo from "./busFreeSeating/mockObjectInfo";
+import PaymentPage from './paymentPage/PaymentPage';
+import paymentPageMockData from './paymentPage//paymentPageListMockData';
 
 //some stuff to get array from income request
 //const { maps_seat } = mockDataSeats2;
@@ -24,6 +26,7 @@ const { map_seat } = first_element;
 const sortedArray = utils.sortArray(map_seat);
 const chunkedArray = utils.arrayTransform(sortedArray);
 
+
 const mockPassengerData = {
   fullName: "Иванов Иван",
   seatNumber: 39,
@@ -31,10 +34,12 @@ const mockPassengerData = {
   ageCategory: "взрослый"
 };
 
+
 class App extends Component {
   render() {
+
     return (
-      console.log(chunkedArray) || (
+      (
         <>
           <Header />
           <div className={styles.app}>
@@ -98,6 +103,9 @@ class App extends Component {
             <br />
             <BusFreeSeating objectInfo={mockBusFreeSeatingObjectInfo} />
           </div>
+
+          <PaymentPage paymentPageInfo={paymentPageMockData}/>
+
 
           <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />
         </>
