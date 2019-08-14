@@ -19,6 +19,7 @@ class PaymentPage extends Component {
   constructor(props){
     super(props);
     this.handlePay = this.handlePay.bind(this);
+    this.handleWindowClick = this.handleWindowClick.bind(this);
   }
 
   checkBoxRef = createRef();
@@ -32,7 +33,9 @@ class PaymentPage extends Component {
 
   handlePay = e => {
     e.preventDefault();
+
     const {submitPublicOffer} = this.state;
+
     if(!submitPublicOffer){
       this.setState({isError: true})
     }
@@ -94,7 +97,7 @@ class PaymentPage extends Component {
                   Пассажиры:
                 </div>
                 <Fragment>
-                  {passengersList.map(passenger => (
+                  {passengersList && passengersList.map(passenger => (
                     <Passenger seatMessage="место" objectInfo={passenger} />
                   ))}
                 </Fragment>
@@ -207,3 +210,4 @@ PaymentPage.propTypes = {
 };
 
 export default PaymentPage;
+
