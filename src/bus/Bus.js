@@ -5,8 +5,10 @@ import EmptyPlace from "../not_seat/EmptyPlace";
 import BusLegendItems from "./BusLegendItems";
 import seatTypesEnum from "../seat/seat_types_enumeration";
 import seatStatusEnum from "../seat/seat_status_enumerations";
-import steeringWwheelIcon from "./steering-wheel.svg";
+import steeringWheelIcon from "./steering-wheel.svg";
 import styles from "./Bus.module.scss";
+
+//seatsList - needs to transform props using utils function - busUtils
 
 class Bus extends Component {
   render() {
@@ -20,11 +22,11 @@ class Bus extends Component {
             <div className={styles.bus}>
               <div className={styles.busDriversCab}>
                 <img
-                  src={steeringWwheelIcon}
+                  src={steeringWheelIcon}
                   alt="steering wheel"
                   width="32px"
                   height="32px"
-                  className={styles.steeringWwheel}
+                  className={styles["steeringWheel"]}
                 />
               </div>
               <div className={styles.busSalonPassenger}>
