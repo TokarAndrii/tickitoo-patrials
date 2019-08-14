@@ -44,9 +44,10 @@ describe("ThankYou tests", ()=> {
 });
 
 
-it("should render button with backWaysBtnMessage if showbackWaysBtn=true", ()=> {
-    const newProps = {...props,showbackWaysBtn : false };
+it("should render button with backWaysBtnMessage if showbackWaysBtn=false", ()=> {
+    const newProps = {...props, showbackWaysBtn : false };
     const wrapper = shallow(<ThankYou {...newProps} />)
     expect(wrapper.find("button.secondary").length).toEqual(0);
 });
+
 

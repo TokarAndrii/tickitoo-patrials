@@ -175,12 +175,12 @@ class PaymentPage extends Component {
                     <img
                       className={styles["icon-visa"]}
                       src={visaIcon}
-                      alt="visa"
+                      alt="visa logo"
                     />
                     <img
                       className={styles["icon-mastercard"]}
                       src={masterCardIcon}
-                      alt="masterCard"
+                      alt="masterCard logo"
                     />
                   </div>
                 </div>
@@ -191,7 +191,7 @@ class PaymentPage extends Component {
                 </div>
                 <img
                   src={pciIcon}
-                  alt="payment-data__pci"
+                  alt="payment pci logo"
                   className={styles["payment-data__pci"]}
                 />
               </div>
@@ -210,4 +210,3 @@ PaymentPage.propTypes = {
 };
 
 export default PaymentPage;
-

@@ -1,8 +1,8 @@
 import React from "react";
-import HeaderLogo from "./header-logo/HeaderLogo";
+import HeaderLogo from "./headerLogo/HeaderLogo";
 import HeaderSupport from "./headerSupport/HeaderSupport";
-import HeaderLanguageSelector from './header_language_selector/HeaderLanguageSelector';
-import logoImage from "./header-logo/logo.png";
+import HeaderLanguageSelector from './headerLanguageSelector/HeaderLanguageSelector';
+import logoImage from "./headerLogo/logo.png";
 import styles from "./Header.module.scss";
 
 const Header = function () {
@@ -23,7 +23,7 @@ const Header = function () {
             description="Бесплатно со всех стационарных и мобильных операторов Украины"
           />
 
-          <HeaderLanguageSelector/>
+          <HeaderLanguageSelector />
           <div className={styles['header__burger']}>
             <span />
             <span />
@@ -35,3 +35,4 @@ const Header = function () {
 }
 
 export default Header;
+

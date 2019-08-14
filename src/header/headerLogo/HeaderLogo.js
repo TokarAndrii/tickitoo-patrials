@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Proptypes from 'prop-types';
 import styles from "./HeaderLogo.module.scss";
 
 const HeaderLogo = function ({ linkForLogo, altName, imageSrc }) {
+
   return (
-    <a href={linkForLogo} className={styles['header__logo']}>
+    <Link to={linkForLogo} className={styles['header__logo']}>
       <img alt={altName} src={imageSrc} />
-    </a>
+    </Link>
   );
 }
 
@@ -17,3 +19,6 @@ HeaderLogo.propTypes = {
 }
 
 export default HeaderLogo;
+
+
+

@@ -14,15 +14,15 @@ const Button = function({className, message, handleClick, type}){
 };
 
 Button.propTypes = {
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     message: PropTypes.string.isRequired,
     type: PropTypes.string,
-    name: PropTypes.string.isRequired,
     handleClick: PropTypes.func.isRequired
 }
 
 Button.defaultProps = {
-    type:  "button" 
+    type:  "button",
+    className: "",
 }
 
 export default Button;

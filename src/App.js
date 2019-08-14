@@ -60,7 +60,7 @@ class App extends Component {
         </div>
         <div style={{ marginTop: "300px" }} />
 
-        <ButtonBack className={styles.buttonBack} message="назад" linkTo="/" />
+        <ButtonBack className={styles.buttonBack} message="назад" linkTo="/some" />
 
         <main>
           <Passenger objectInfo={mockPassengerData} seatMessage="место" />

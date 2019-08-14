@@ -19,21 +19,21 @@ describe("Button tests", () => {
         wrapper = shallow(<Button {...props}></Button>);
     })
 
-    it(`should render <button class='${props.className}'></button>`, ()=> {
+    it(`should render Button with  class='${props.className}'`, () => {
         expect(wrapper.find("button.test").length).toBe(1);
     });
 
-    it(`should render with correct message inside as children - <button>${props.message}</button> `, ()=> {
+    it(`should render Button with correct message inside as children - ${props.message}`, () => {
         expect(wrapper.find("button.test").prop("children")).toEqual(props.message);
     });
 
-    it(`should render button with correct type attribute -  <button type=${props.type}></button>`, ()=> {
+    it(`should render Button with correct type attribute -  type=${props.type}`, () => {
         expect(wrapper.find("button.test").prop("type")).toEqual(props.type);
     });
 
-    it("should call on 'click' event handleClick  function one time", ()=> {
+    it("should call on 'click' event handleClick  function one time", () => {
         wrapper.find("button.test").simulate("click")
         expect(mockCallback.mock.calls.length).toBe(1);
     });
 
-})
+});

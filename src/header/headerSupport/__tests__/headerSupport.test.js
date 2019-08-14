@@ -32,5 +32,4 @@ describe("HeaderSupport tests", ()=> {
         expect(wrapper.find(".header__support-description").contains(props.description)).toEqual(true);
     });
 
-
-})
+});

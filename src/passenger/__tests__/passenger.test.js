@@ -31,4 +31,4 @@ describe("Passenger tests", ()=> {
         expect(wrapper.find("p").text())
         .toEqual(`${props.seatMessage} ${props.objectInfo.seatNumber}, ${props.objectInfo.ageCategory}, ${props.objectInfo.document}`);
     });
-})
+});

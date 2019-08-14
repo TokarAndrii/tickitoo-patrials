@@ -8,12 +8,7 @@ const ButtonBack = function({ message, linkTo, className}){
     return (
         <div className={styles.container}>
             <div className={styles.content}>
-                <Link
-                    className={className}
-                    to={linkTo}
-                >
-                    {message}
-                </Link>
+                <a className={className} href={linkTo}>{message}</a>
             </div>
         </div>
 

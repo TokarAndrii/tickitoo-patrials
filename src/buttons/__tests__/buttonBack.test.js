@@ -1,7 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
 import ButtonBack from '../ButtonBack';
-import {Link} from 'react-router-dom';
 
 describe("ButtonBack tests", ()=> {
     const props = { 
@@ -14,15 +13,15 @@ describe("ButtonBack tests", ()=> {
         wrapper = shallow(<ButtonBack {...props}/>)
     });
 
-    it(`should render <a class='${props.className}'></a>`, ()=> {
-        expect(wrapper.find(Link).prop("className")).toEqual(props.className);
+    it(`should render <a> with class=${props.className}`, ()=> {
+        expect(wrapper.find("a").prop("className")).toEqual(props.className);
     });
 
-    it(`should render Link with right link - ${props.linkTo}`, ()=> {
-        expect(wrapper.find(Link).prop("to")).toEqual(props.linkTo);
+    it(`should render <a> with href = ${props.linkTo}`, ()=> {
+        expect(wrapper.find("a").prop("href")).toEqual(props.linkTo);
     });
 
-    it(`should render with correct message inside as children - ${props.message}`, ()=> {
-        expect(wrapper.find(Link).prop("children")).toEqual(props.message);
+    it(`should render <a> with correct message inside as children - ${props.message}`, ()=> {
+        expect(wrapper.find("a").prop("children")).toEqual(props.message);
     });
-})
+});

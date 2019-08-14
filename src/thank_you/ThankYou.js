@@ -24,7 +24,6 @@ class ThankYou extends Component {
                     </div>
                     <p>
                         {`${textAboutSendToMail} `}<b>{email}</b>
-                        {/* {textAboutSendToMail}<b>{email}</b> */}
                         <br></br>
                         <br></br>
                         {textAboutPrintTickets}
@@ -33,8 +32,7 @@ class ThankYou extends Component {
                         {textAboutThank}
                     </p>
                     {showbackWaysBtn
-                     && (
-                            <div className={styles['transactions-success__action']}>
+                     && (   <div className={styles['transactions-success__action']}>
                                 <Button 
                                     message={backWaysBtnMessage}
                                     className={styles.secondary}

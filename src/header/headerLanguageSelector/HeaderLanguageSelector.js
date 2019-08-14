@@ -63,11 +63,6 @@ class HeaderLanguageSelector extends Component{
         onClick={this.handleToggleShowLanguagesList} 
         ref={this.containerRef}
       >
-          {/* <select name="language" value={language} className="select2-hidden-accessible">
-            {availLanguage.map(language => (
-                 <option key={language} value={language}>{language}</option>
-            ))}
-          </select> */}
           <div className={styles['visible-holder']}>
           <div>{language}</div>
             <div>

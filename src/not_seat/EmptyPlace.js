@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './EmptyPlace.module.scss';
 
-const EmptyPlace = function (){
-    return <div className={styles.emptyPlace}></div>
-}
+const EmptyPlace = () =>  <div className={styles.emptyPlace} />
+
 
 export default EmptyPlace;

@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Passenger.module.scss'
 
-const Passenger = function(
-    {seatMessage,  
-        objectInfo: {fullName,  seatNumber, document, ageCategory}
-    })  {
+const Passenger = function( {seatMessage, objectInfo})  {
+
+    const {fullName,  seatNumber, document, ageCategory} = objectInfo;
 
     return (
         <div className={styles['payment-data__info-item']}>
