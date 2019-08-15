@@ -11,12 +11,11 @@ import masterCardIcon from "./mastercard.png";
 
 const INITIAL_STATE = {
   isError: false,
-  submitPublicOffer: false,
-}
+  submitPublicOffer: false
+};
 
 class PaymentPage extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.handlePay = this.handlePay.bind(this);
     this.handleWindowClick = this.handleWindowClick.bind(this);
@@ -26,63 +25,62 @@ class PaymentPage extends Component {
 
   payButtonRef = createRef();
 
-  state = {...INITIAL_STATE};
+  state = { ...INITIAL_STATE };
 
-  handleTogglePublicOffer = () => this.setState(prevState => ({submitPublicOffer: !prevState.submitPublicOffer}));
-
+  handleTogglePublicOffer = () =>
+    this.setState(prevState => ({
+      submitPublicOffer: !prevState.submitPublicOffer
+    }));
 
   handlePay = e => {
     e.preventDefault();
 
-    const {submitPublicOffer} = this.state;
+    const { submitPublicOffer } = this.state;
 
-    if(!submitPublicOffer){
-      this.setState({isError: true})
+    if (!submitPublicOffer) {
+      this.setState({ isError: true });
     }
-  }
+  };
 
-  handleToggleError = () => this.setState(prevState => ({isError: !prevState.isError}));
-
+  handleToggleError = () =>
+    this.setState(prevState => ({ isError: !prevState.isError }));
 
   handleWindowClick = e => {
-  
-    const {isError, submitPublicOffer} = this.state;
+    const { isError, submitPublicOffer } = this.state;
 
     let isTargetInsidecheckBox;
     let isTargetInsideButton;
 
-    if(isError && submitPublicOffer &&  this.checkBoxRef.current){
-       isTargetInsidecheckBox = this.checkBoxRef.current.contains(e.target);
-      
-       isTargetInsidecheckBox && this.handleToggleError();
+    if (isError && submitPublicOffer && this.checkBoxRef.current) {
+      isTargetInsidecheckBox = this.checkBoxRef.current.contains(e.target);
+
+      isTargetInsidecheckBox && this.handleToggleError();
     }
-    
-    if(isError && !submitPublicOffer &&  this.payButtonRef.current){
+
+    if (isError && !submitPublicOffer && this.payButtonRef.current) {
       isTargetInsideButton = this.payButtonRef.current.contains(e.target);
-      
+
       !isTargetInsideButton && this.handleToggleError();
     }
-  
-  
+  };
+
+  componentDidMount() {
+    window.addEventListener("click", this.handleWindowClick);
   }
 
-  componentDidMount(){
-    window.addEventListener("click",  this.handleWindowClick);
-  }
-
-  componentWillUnmount(){
-    window.removeEventListener("click",  this.handleWindowClick);
+  componentWillUnmount() {
+    window.removeEventListener("click", this.handleWindowClick);
   }
 
   render() {
-
     const {
-      paymentPageInfo: { passengersList, tripDetailsInfo }, linkToPublicOffer
+      paymentPageInfo: { passengersList, tripDetailsInfo },
+      linkToPublicOffer
     } = this.props;
 
     const { numberTrip, carrier, bus, listRoute } = tripDetailsInfo;
 
-    const {isError} = this.state;
+    const { isError } = this.state;
 
     return (
       <div className={styles["payment-data__content"]}>
@@ -97,9 +95,10 @@ class PaymentPage extends Component {
                   Пассажиры:
                 </div>
                 <Fragment>
-                  {passengersList && passengersList.map(passenger => (
-                    <Passenger seatMessage="место" objectInfo={passenger} />
-                  ))}
+                  {passengersList &&
+                    passengersList.map(passenger => (
+                      <Passenger seatMessage="место" objectInfo={passenger} />
+                    ))}
                 </Fragment>
               </div>
             </div>
@@ -111,26 +110,18 @@ class PaymentPage extends Component {
                 <RouteList fullView={false} listRoute={listRoute} />
               </div>
               <div className={styles["payment-data__info-description"]}>
-                <ul>
-                  <li>
-                    <p>
-                      <span>Рейс:</span>
-                      {numberTrip}
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>Перевозчик:</span>
-                      {carrier}
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span>Автобус:</span>
-                      {bus}
-                    </p>
-                  </li>
-                </ul>
+                <p>
+                  <span>Рейс:</span>
+                  {numberTrip}
+                </p>
+                <p>
+                  <span>Перевозчик:</span>
+                  {carrier}
+                </p>
+                <p>
+                  <span>Автобус:</span>
+                  {bus}
+                </p>
               </div>
             </div>
           </div>
@@ -147,22 +138,38 @@ class PaymentPage extends Component {
                   </strong>
                 </div>
                 <div className={styles["payment-data__checkbox"]}>
-                  <label 
-                    className={[styles['field-checkbox'], 
-                                styles['field-checkbox--dark'], 
-                                styles['filed-label']].join(" ")}>
-                    <input ref={ref => this.checkBoxRef = ref} type="checkbox" onChange={this.handleTogglePublicOffer}></input>
-                    <span className={styles['field-checkbox__mark']}></span>
-                    {isError && (<span className={styles['warning-message']}>Нужно принять условия</span>)}                    
-                    <span className={styles['field-checkbox__title']}>
+                  <label
+                    className={[
+                      styles["field-checkbox"],
+                      styles["field-checkbox--dark"],
+                      styles["filed-label"]
+                    ].join(" ")}
+                  >
+                    <input
+                      ref={ref => (this.checkBoxRef = ref)}
+                      type="checkbox"
+                      onChange={this.handleTogglePublicOffer}
+                    />
+                    <span className={styles["field-checkbox__mark"]} />
+                    {isError && (
+                      <span className={styles["warning-message"]}>
+                        Нужно принять условия
+                      </span>
+                    )}
+                    <span className={styles["field-checkbox__title"]}>
                       Я принимаю условия
-                      <Link to={linkToPublicOffer}>публичной оферты, политики конфиденциальности</Link>
-                      и даю согласие на обработку моих персональных данных								
+                      <Link to={linkToPublicOffer}>
+                        публичной оферты, политики конфиденциальности
+                      </Link>
+                      и даю согласие на обработку моих персональных данных
                     </span>
                   </label>
                 </div>
                 <div className={styles["payment-data__action"]}>
-                  <div className={styles["payment-data__action-lside"]} ref={this.payButtonRef}>
+                  <div
+                    className={styles["payment-data__action-lside"]}
+                    ref={this.payButtonRef}
+                  >
                     <Button
                       className={styles.primary}
                       message="Оплатить заказ картой"
@@ -206,7 +213,7 @@ class PaymentPage extends Component {
 PaymentPage.propTypes = {
   linkToPublicOffer: PropTypes.string.isRequired,
   //it can be described as PropTypes.shape() later - when form of this prop will be known for sure
-  paymentPageInfo: PropTypes.object.isRequired,
+  paymentPageInfo: PropTypes.object.isRequired
 };
 
 export default PaymentPage;

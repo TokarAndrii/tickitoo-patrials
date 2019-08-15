@@ -17,6 +17,8 @@ import mockBusFreeSeatingObjectInfo from "./busFreeSeating/mockObjectInfo";
 import PaymentPage from "./paymentPage/PaymentPage";
 import paymentPageMockData from "./paymentPage//paymentPageListMockData";
 
+import HomePage from "./pages/homePage/HomePage";
+
 //some stuff to get array from income request
 //const { maps_seat } = mockDataSeats2;
 
@@ -60,7 +62,11 @@ class App extends Component {
         </div>
         <div style={{ marginTop: "300px" }} />
 
-        <ButtonBack className={styles.buttonBack} message="назад" linkTo="/some" />
+        <ButtonBack
+          className={styles.buttonBack}
+          message="назад"
+          linkTo="/some"
+        />
 
         <main>
           <Passenger objectInfo={mockPassengerData} seatMessage="место" />
@@ -99,6 +105,8 @@ class App extends Component {
         <div className={styles.container}>
           <PaymentPage paymentPageInfo={paymentPageMockData} />
         </div>
+
+        <HomePage />
 
         <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />
       </>
