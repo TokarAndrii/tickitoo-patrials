@@ -1,0 +1,46 @@
+.steps-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.payment {
+  background-image: url('./bg-seats.jpg');
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 0 20px;
+}
+
+.steps-hero__content {
+  padding: 65px 0;
+  text-align: center;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    text-shadow: 3px 4px 5px rgba(1, 1, 1, 0.2);
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  h1 {
+    display: block;
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 28px;
+    text-shadow: 3px 4px 5px rgba(1, 1, 1, 0.2);
+    color: #fff;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .container {
+    padding: 0 10px;
+  }
+}

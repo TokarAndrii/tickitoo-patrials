@@ -18,6 +18,7 @@ import PaymentPage from "./paymentPage/PaymentPage";
 import paymentPageMockData from "./paymentPage//paymentPageListMockData";
 
 import HomePage from "./pages/homePage/HomePage";
+import Banner from "./banner/Banner";
 
 //some stuff to get array from income request
 //const { maps_seat } = mockDataSeats2;
@@ -107,6 +108,13 @@ class App extends Component {
         </div>
 
         <HomePage />
+        <br />
+        <Banner
+          classNameHolder="payment"
+          title="ОФОРМЛЕНИЕ БИЛЕТОВ"
+          text="Шаг 2 из 3"
+        />
+        <br />
 
         <Footer copirightText="&copy; 2018-2019 Tickitoo. Все права защищены." />
       </>
