@@ -98,6 +98,12 @@ class App extends Component {
             busName="Hyndai Universe Bus"
             seatsList={chunkedArray}
           />
+
+          <Bus
+            title="Выберите место на схеме автобуса"
+            busName="Hyndai Universe Bus"
+            seatsList={[]}
+          />
           <br />
           <br />
           <BusFreeSeating objectInfo={mockBusFreeSeatingObjectInfo} />

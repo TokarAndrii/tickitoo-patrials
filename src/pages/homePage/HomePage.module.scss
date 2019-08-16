@@ -1,4 +1,4 @@
-.filter {
+.home {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -18,19 +18,19 @@
 }
 
 
-.filter__content {
+.home__content {
   padding: 117px 0;
   position: relative;
   z-index: 10;
 }
 
 @media only screen and (max-width: 1000px) {
-  .filter__content {
+  .home__content {
     padding: 24px 0;
   }
 }
 
-.filter__title {
+.home__title {
   display: block;
   text-align: center;
   text-shadow: 0 0 5px rgba(1, 1, 1, 0.34);
@@ -40,7 +40,7 @@
   line-height: 1.2;
 }
 
-.filter--home {
+.home--main {
   z-index: 6;
   position: relative;
 
@@ -57,13 +57,13 @@
 }
 
 @media only screen and (max-width: 520px) {
-  .filter--home {
+  .home--home {
     background-image: none !important;
     background-color: #0690b5;
   }
 }
 
-.filter__settings {
+.home__settings {
   display: flex;
   background-color: #f1f1f1;
   padding: 10px 11px;
@@ -74,19 +74,19 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .filter__settings {
+  .home__settings {
     flex-wrap: wrap;
   }
 }
 
 @media only screen and (max-width: 520px) {
-  .filter__settings {
+  .home__settings {
     padding: 7px;
     margin: 12px;
   }
 }
 
-.filter__advantages {
+.home__advantages {
   position: relative;
   z-index: 2;
   display: flex;
@@ -96,13 +96,13 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .filter__advantages {
+  .home__advantages {
     margin: 100px -15px 0 -15px;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .filter__advantages {
+  .home__advantages {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 70px;
@@ -110,21 +110,21 @@
 }
 
 @media only screen and (max-width: 520px) {
-  .filter__advantages {
+  .home__advantages {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
 
-.filter__advantages-item {
+.home__advantages-item {
   flex: 0 0 auto;
   max-width: 160px;
   padding: 20px;
 }
 
 @media only screen and (max-width: 1000px) {
-  .filter__advantages-item {
+  .home__advantages-item {
     padding: 15px;
     flex: 0 0 20%;
     max-width: 100%;
@@ -132,12 +132,12 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .filter__advantages-item {
+  .home__advantages-item {
     flex: 0 0 33.3333333%;
   }
 }
 
-.filter__advantages-icon {
+.home__advantages-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,31 +145,31 @@
   user-select: none;
 }
 
-.filter__advantages-icon--computer img {
+.home__advantages-icon--computer img {
   max-width: 42px;
 }
 
-.filter__advantages-icon--card img {
+.home__advantages-icon--card img {
   max-width: 42px;
 }
 
-.filter__advantages-icon--directions img {
+.home__advantages-icon--directions img {
   max-width: 36px;
 }
 
-.filter__advantages-icon--carriers img {
+.home__advantages-icon--carriers img {
   max-width: 38px;
 }
 
-.filter__advantages-icon--refund img {
+.home__advantages-icon--refund img {
   max-width: 42px;
 }
 
-.filter__advantages-icon img {
+.home__advantages-icon img {
   max-height: 100%;
 }
 
-.filter__advantages-title {
+.home__advantages-title {
   display: block;
   margin-top: 18px;
   text-align: center;
@@ -180,13 +180,13 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .filter__title {
+  .home__title {
     font-size: 24px;
   }
 }
 
 @media only screen and (max-width: 520px) {
-  .filter__title {
+  .home__title {
     font-size: 16px;
     font-weight: 500;
     max-width: 190px;
@@ -196,20 +196,20 @@
 
 @media only screen and (max-width: 450px) {
 
-  .filter__advantages {
+  .home__advantages {
     display: block;
     margin: 0 !important;
     padding: 0 34px;
   }
 
-  .filter__advantages-item {
+  .home__advantages-item {
     display: flex;
     align-items: center;
     justify-content: center;
 
   }
 
-  .filter__advantages-title {
+  .home__advantages-title {
     margin: 0 0 0 35px;
     flex: 1 1 auto;
     text-align: left;

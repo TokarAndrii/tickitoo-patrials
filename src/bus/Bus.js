@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Seat from "../seat/Seat";
 import EmptyPlace from "../not_seat/EmptyPlace";
@@ -9,13 +9,12 @@ import steeringWheelIcon from "./steering-wheel.svg";
 import styles from "./Bus.module.scss";
 
 //seatsList - needs to transform props using utils function - busUtils
-
 class Bus extends Component {
   render() {
     const { seatsList, title, busName } = this.props;
 
     return (
-      <>
+      <Fragment>
         {seatsList && seatsList.length > 0 && (
           <div className={styles.busHolder}>
             <h3>{title}</h3>
@@ -62,7 +61,7 @@ class Bus extends Component {
             </div>
           </div>
         )}
-      </>
+      </Fragment>
     );
   }
 }

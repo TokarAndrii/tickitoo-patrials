@@ -10,18 +10,18 @@ describe("HomePage tests", () => {
   });
 
   it("should render HomePage", () => {
-    expect(wrapper.find(".filter").length).toBe(1);
+    expect(wrapper.find(".home").length).toBe(1);
   });
 
   it("should render title", () => {
-    expect(wrapper.find(".filter__title").length).toBe(1);
+    expect(wrapper.find(".home__title").length).toBe(1);
   });
 
   it("should render 5 images at advantages", () => {
-    expect(wrapper.find(".filter__advantages img").length).toBe(5);
+    expect(wrapper.find(".home__advantages img").length).toBe(5);
   });
 
   it("should render 5 titles at advantages", () => {
-    expect(wrapper.find(`.filter__advantages-title`).length).toBe(5);
+    expect(wrapper.find(`.home__advantages-title`).length).toBe(5);
   });
 });
