@@ -23,6 +23,8 @@ import Banner from "./banner/Banner";
 //some stuff to get array from income request
 //const { maps_seat } = mockDataSeats2;
 
+import SimpleTrip from "./simpleTrip/SimpleTrip";
+
 const { maps_seat } = bigBusMockData;
 const [first_element] = maps_seat;
 const { map_seat } = first_element;
@@ -41,6 +43,7 @@ class App extends Component {
     return (
       <>
         <Header />
+        <SimpleTrip></SimpleTrip>
         <div className={styles.app}>
           <div
             style={{
