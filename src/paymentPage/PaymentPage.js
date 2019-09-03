@@ -1,4 +1,4 @@
-import React, { Component, Fragment, createRef } from "react";
+import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "../buttons/Button";
@@ -9,27 +9,20 @@ import pciIcon from "./pci.png";
 import visaIcon from "./visa.png";
 import masterCardIcon from "./mastercard.png";
 
-const INITIAL_STATE = {
-  isError: false,
-  submitPublicOffer: false
-};
-
 class PaymentPage extends Component {
   constructor(props) {
     super(props);
     this.handlePay = this.handlePay.bind(this);
-    this.handleWindowClick = this.handleWindowClick.bind(this);
+    this.state = {
+      isError: false,
+      submitPublicOffer: false
+    };
   }
 
-  checkBoxRef = createRef();
-
-  payButtonRef = createRef();
-
-  state = { ...INITIAL_STATE };
-
-  handleTogglePublicOffer = () =>
+  handleAcceptPublicOffer = () =>
     this.setState(prevState => ({
-      submitPublicOffer: !prevState.submitPublicOffer
+      submitPublicOffer: !prevState.submitPublicOffer,
+      isError: false
     }));
 
   handlePay = e => {
@@ -41,36 +34,6 @@ class PaymentPage extends Component {
       this.setState({ isError: true });
     }
   };
-
-  handleToggleError = () =>
-    this.setState(prevState => ({ isError: !prevState.isError }));
-
-  handleWindowClick = e => {
-    const { isError, submitPublicOffer } = this.state;
-
-    let isTargetInsidecheckBox;
-    let isTargetInsideButton;
-
-    if (isError && submitPublicOffer && this.checkBoxRef.current) {
-      isTargetInsidecheckBox = this.checkBoxRef.current.contains(e.target);
-
-      isTargetInsidecheckBox && this.handleToggleError();
-    }
-
-    if (isError && !submitPublicOffer && this.payButtonRef.current) {
-      isTargetInsideButton = this.payButtonRef.current.contains(e.target);
-
-      !isTargetInsideButton && this.handleToggleError();
-    }
-  };
-
-  componentDidMount() {
-    window.addEventListener("click", this.handleWindowClick);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("click", this.handleWindowClick);
-  }
 
   render() {
     const {
@@ -146,9 +109,8 @@ class PaymentPage extends Component {
                     ].join(" ")}
                   >
                     <input
-                      ref={ref => (this.checkBoxRef = ref)}
                       type="checkbox"
-                      onChange={this.handleTogglePublicOffer}
+                      onChange={this.handleAcceptPublicOffer}
                     />
                     <span className={styles["field-checkbox__mark"]} />
                     {isError && (
@@ -166,10 +128,7 @@ class PaymentPage extends Component {
                   </label>
                 </div>
                 <div className={styles["payment-data__action"]}>
-                  <div
-                    className={styles["payment-data__action-lside"]}
-                    ref={this.payButtonRef}
-                  >
+                  <div className={styles["payment-data__action-lside"]}>
                     <Button
                       className={styles.primary}
                       message="Оплатить заказ картой"

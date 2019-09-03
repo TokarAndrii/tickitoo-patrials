@@ -16,7 +16,7 @@ describe("Seat tests", () => {
     wrapper = shallow(<Seat {...defaultProps} />);
   });
 
-  it("should render <div class='seat'></div>", () => {
+  it("should render Seat", () => {
     expect(wrapper.find(".seat").length).toEqual(1);
   });
 

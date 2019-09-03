@@ -1,5 +1,11 @@
 .route__description {
     flex: 1 1 auto;
+    width: 100%;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.route__description:last-child {
+    border-bottom: 1px solid tra;
 }
 
 .route__holder {
@@ -24,10 +30,6 @@
     padding: 20px 0;
 }
 
-.open {
-    padding-bottom: 14px;
-}
-
 @media only screen and (max-width: 1000px) {
     .route__header {
         flex-wrap: wrap;
@@ -49,6 +51,10 @@
         background-color: #eaeaea;
         content: '';
     }
+}
+
+.route__body {
+    margin-top: -6px;
 }
 
 .primary {
@@ -89,6 +95,12 @@
     padding: 0 18px;
 }
 
+@media only screen and (max-width: 520px) {
+    .route__inner {
+        padding: 0 10px;
+    }
+}
+
 .route__inner--carrier {
     flex: 0 0 230px;
 }
@@ -119,9 +131,82 @@
     }
 }
 
+.route__carrier_back-way {
+    display: block;
+    position: relative;
+    padding-left: 48px;
+
+    span {
+        display: inline-block;
+        color: #999;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: '';
+        width: 38px;
+        height: 18px;
+        background-image: url("./bus-mini.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: scale(-1, 1);
+    }
+}
+
+
+.back_way {
+    transform: scale(-1, 1);
+}
+
 @media only screen and (max-width: 730px) {
     .route__carrier {
         display: none;
+    }
+
+    .route__carrier_back-way {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .route__inner--carrier {
+        margin-top: 22px;
+        order: 4;
+        flex: 0 0 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .route__inner--carrier {
+        bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--carrier {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .route__inner--carrier .route__inner-carrier {
+        order: 2;
+        margin-left: 18px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--carrier .route__inner-carrier {
+        margin-left: 0;
     }
 }
 
@@ -208,4 +293,200 @@
     .route__station {
         font-size: 10px;
     }
+}
+
+.route__inner--departure {
+    flex: 0 1 275px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .route__inner--departure {
+        flex: 0 0 43%;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--departure {
+        flex: 0 0 50%;
+    }
+}
+
+.route__inner--arriving {
+    flex: 0 1 275px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .route__inner--arriving {
+        flex: 0 0 43%;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--arriving {
+        flex: 0 0 50%;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--arriving .route__time {
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--arriving .route__date {
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--departure .route__time {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--departure .route__date {
+        text-align: left;
+    }
+}
+
+.route__time {
+    font-size: 16px;
+    color: #999;
+
+    span {
+        font-size: 12px;
+    }
+}
+
+.route__time {
+    display: block;
+    color: #303030;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 5px;
+    }
+}
+
+.route__inner--travel-time {
+    flex: 0 0 170px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .route__inner--travel-time {
+        flex: 0 0 30%;
+        margin-left: -16%;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--travel-time {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        padding: 6px;
+        flex: 0 0 auto;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .route__inner--travel-time {
+        top: 12px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--travel-time .route__time {
+        color: #999;
+        font-size: 16px;
+    }
+
+    .route__inner--travel-time .route__time span {
+        font-size: 12px;
+    }
+}
+
+
+.route__information {
+    border-top: 1px solid #eaeaea;
+    padding: 12px 18px;
+}
+
+.route__information-item {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    span {
+        color: #999;
+        margin-right: 3px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .route__information {
+        padding: 12px 10px;
+    }
+}
+
+.route__schedule {
+    border-top: 1px solid #eaeaea;
+    padding: 22px 18px;
+    overflow: hidden;
+}
+
+.route__inner--price {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+}
+
+.route__inner--price .btn-orange-border {
+    padding: 8px 22px;
+}
+
+@media only screen and (max-width: 730px) {
+    .route__inner--price {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .route__inner--price {
+        bottom: 10px;
+    }
+}
+
+.btn-orange-border {
+    background-color: transparent;
+    color: #ec6a00;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.35px;
+    padding: 13px 12px;
+    border: 2px solid #ff9933;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    transition: .3s;
 }

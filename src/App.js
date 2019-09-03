@@ -24,6 +24,9 @@ import Banner from "./banner/Banner";
 //const { maps_seat } = mockDataSeats2;
 
 import SimpleTrip from "./simpleTrip/SimpleTrip";
+import simpleTripMockData from "./simpleTrip/mockProps";
+import CompoundTrip from "./compoundTrip/CompoundTrip";
+import compoundMockProps from "./compoundTrip/compoundTripMockProps";
 
 const { maps_seat } = bigBusMockData;
 const [first_element] = maps_seat;
@@ -43,7 +46,10 @@ class App extends Component {
     return (
       <>
         <Header />
-        <SimpleTrip></SimpleTrip>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <div className={styles.app}>
           <div
             style={{
@@ -53,16 +59,24 @@ class App extends Component {
               alignItems: "center"
             }}
           />
-
-          <div>
-            <RouteList listRoute={testRouteData} fullView={true} />
+          {/* <SimpleTrip thereWay isDesktop /> */}
+          {/* <SimpleTrip tripInfo={simpleTripMockData} thereWay isDesktop /> */}
+          <div className={styles.container2}>
+            <CompoundTrip
+              listTripInfo={compoundMockProps}
+              priceWithoutDiscount={1150}
+              priceWithDiscount={1050}
+            />
           </div>
 
-          <br />
+          {/* <div>
+            <RouteList listRoute={testRouteData} fullView={true} />
+          </div> */}
+          {/* <br />
           <br />
           <div>
             <RouteList listRoute={testRouteData} fullView={false} />
-          </div>
+          </div> */}
         </div>
         <div style={{ marginTop: "300px" }} />
 
@@ -96,7 +110,7 @@ class App extends Component {
             flexDirection: "column"
           }}
         >
-          <Bus
+          {/* <Bus
             title="Выберите место на схеме автобуса"
             busName="Hyndai Universe Bus"
             seatsList={chunkedArray}
@@ -106,7 +120,7 @@ class App extends Component {
             title="Выберите место на схеме автобуса"
             busName="Hyndai Universe Bus"
             seatsList={[]}
-          />
+          /> */}
           <br />
           <br />
           <BusFreeSeating objectInfo={mockBusFreeSeatingObjectInfo} />
