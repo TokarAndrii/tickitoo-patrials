@@ -57,7 +57,62 @@
     margin-top: -6px;
 }
 
-.primary {
+
+
+.route__bottom {
+    padding: 15px 18px;
+    width: 100%;
+}
+
+.route__bottom-price {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    p {
+        display: inline-block;
+        color: #999;
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    strong {
+        display: inline-block;
+        flex: 0 0 auto;
+        padding-left: 10px;
+        color: #333;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+
+
+        span {
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+    }
+}
+
+
+
+
+@media only screen and (max-width: 520px) {
+    .route__bottom {
+        padding: 10px 0px 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.secondary {
     background-color: transparent;
     color: #0691b5;
     font-family: "Montserrat";
@@ -88,6 +143,32 @@
         outline: none;
     }
 
+}
+
+.primary {
+    background-color: #f59e1b;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.35px;
+    padding: 13px 12px;
+    display: block;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.wideButton {
+    max-width: none;
+    width: 98%;
+    margin-bottom: 10px;
+}
+
+.wideButtonPrimary {
+    max-width: none;
+    width: 98%;
+    margin-top: 20px;
 }
 
 .route__inner {

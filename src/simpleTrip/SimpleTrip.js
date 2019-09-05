@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import Button from "../buttons/Button";
 import Route from "../route/RouteList";
 import routeData from "../route/testDataRoutes";
@@ -8,16 +8,57 @@ import styles from "./SimpleTrip.module.scss";
 class SimpleTrip extends Component {
   constructor(props) {
     super(props);
+    this.state = { extended: false, showRouteDetails: true };
     this.handleToggleExtend = this.handleToggleExtend.bind(this);
-    this.state = { extended: false };
+    this.handleHeaderClick = this.handleHeaderClick.bind(this);
   }
 
+  headerRef = createRef();
+
   handleToggleExtend = () => {
-    this.setState(prevState => ({ extended: !prevState.extended }));
+    const { isDesktop } = this.props;
+    if (isDesktop) {
+      this.setState(prevState => ({ extended: !prevState.extended }));
+    }
+    if (!isDesktop) {
+      this.setState(prevState => ({
+        extended: !prevState.extended,
+        showRouteDetails: false
+      }));
+    }
   };
 
+  handleToggleShowRoute = () => {
+    this.setState(prevState => ({
+      showRouteDetails: !prevState.showRouteDetails
+    }));
+  };
+
+  handleHeaderClick = e => {
+    const { isDesktop } = this.props;
+    if (this.headerRef.current) {
+      const isTargetInsideContainer = this.headerRef.current.contains(e.target);
+
+      if (isTargetInsideContainer && !isDesktop) {
+        this.handleToggleExtend();
+      }
+    }
+  };
+
+  componentDidMount() {
+    const { isDesktop } = this.props;
+    if (!isDesktop) {
+      window.addEventListener("click", this.handleHeaderClick);
+    }
+  }
+
+  componentWillMount() {
+    const { isDesktop } = this.props;
+    if (!isDesktop) window.removeEventListener("click", this.handleHeaderClick);
+  }
+
   render() {
-    const { extended } = this.state;
+    const { extended, showRouteDetails } = this.state;
     const { isDesktop = true, tripInfo } = this.props;
     const {
       carrierName,
@@ -30,17 +71,17 @@ class SimpleTrip extends Component {
     } = tripInfo;
 
     const {
-      time: departureTime,
-      date: departureDate,
-      city: departureCity,
-      station: departureStation
+      departureTime,
+      departureDate,
+      departureCity,
+      departureStation
     } = departure;
 
     const {
-      time: arrivingTime,
-      date: arrivingDate,
-      city: arrivingCity,
-      station: arrivingStation
+      arrivingTime,
+      arrivingDate,
+      arrivingCity,
+      arrivingStation
     } = arriving;
 
     const { hours: travelTimeHours, minutes: travelTimeMinutes } = travelTime;
@@ -50,7 +91,7 @@ class SimpleTrip extends Component {
     return (
       <div className={styles["route__description"]}>
         <div className={styles["route__holder"]}>
-          <div className={styles["route__header"]}>
+          <div className={styles["route__header"]} ref={this.headerRef}>
             <div
               className={[
                 styles["route__inner"],
@@ -72,7 +113,7 @@ class SimpleTrip extends Component {
               {isDesktop && (
                 <Button
                   message={extended ? "Свернуть" : "Подробнее"}
-                  className={styles.primary}
+                  className={styles.secondary}
                   handleClick={this.handleToggleExtend}
                 />
               )}
@@ -121,10 +162,12 @@ class SimpleTrip extends Component {
                   styles["route__inner--price"]
                 ].join(" ")}
               >
-                <div className={styles["btn-orange-border"]}>
-                  <strong>{priceWithDiscount}</strong>
-                  грн.
-                </div>
+                {!extended && !isDesktop && (
+                  <div className={styles["btn-orange-border"]}>
+                    <strong>{priceWithDiscount}</strong>
+                    грн.
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -144,9 +187,36 @@ class SimpleTrip extends Component {
                   {bus}
                 </div>
               </div>
-              <div className={styles["route__schedule"]}>
-                <Route listRoute={routeData} fullView={true}></Route>
-              </div>
+              {!isDesktop && (
+                <Button
+                  message="Показать маршрут"
+                  className={[styles.secondary, styles.wideButton].join(" ")}
+                  handleClick={this.handleToggleShowRoute}
+                />
+              )}
+
+              {showRouteDetails && (
+                <div className={styles["route__schedule"]}>
+                  <Route listRoute={routeData} fullView={true}></Route>
+                </div>
+              )}
+              {!isDesktop && (
+                <div className={styles["route__bottom"]}>
+                  <div className={styles["route__bottom-price"]}>
+                    <p>Стоимость за 1 пассажира:</p>
+                    <strong>
+                      {priceWithDiscount}
+                      <span>грн.</span>
+                    </strong>
+                  </div>
+                  <Button
+                    className={[styles.primary, styles.wideButtonPrimary].join(
+                      " "
+                    )}
+                    message="Выбрать места"
+                  ></Button>
+                </div>
+              )}
             </div>
           )}
         </div>

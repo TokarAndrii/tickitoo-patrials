@@ -17,7 +17,7 @@ class CompoundTrip extends Component {
         <div className={styles["route__description"]}>
           {listTripInfo &&
             listTripInfo.map(trip => (
-              <SimpleTrip key={trip.id} tripInfo={trip} />
+              <SimpleTrip key={trip.id} tripInfo={trip} isDesktop={false} />
             ))}
         </div>
         <div className={styles["route__cost"]}>

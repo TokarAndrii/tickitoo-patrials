@@ -27,6 +27,7 @@ import SimpleTrip from "./simpleTrip/SimpleTrip";
 import simpleTripMockData from "./simpleTrip/mockProps";
 import CompoundTrip from "./compoundTrip/CompoundTrip";
 import compoundMockProps from "./compoundTrip/compoundTripMockProps";
+import compoundMockProps2 from "./compoundTrip/compoundTripMockProps2";
 
 const { maps_seat } = bigBusMockData;
 const [first_element] = maps_seat;
@@ -59,11 +60,19 @@ class App extends Component {
               alignItems: "center"
             }}
           />
+
           {/* <SimpleTrip thereWay isDesktop /> */}
           {/* <SimpleTrip tripInfo={simpleTripMockData} thereWay isDesktop /> */}
-          <div className={styles.container2}>
+          {/* <div className={styles.container2}>
             <CompoundTrip
               listTripInfo={compoundMockProps}
+              priceWithoutDiscount={1150}
+              priceWithDiscount={1050}
+            />
+          </div> */}
+          <div className={styles.container2}>
+            <CompoundTrip
+              listTripInfo={compoundMockProps2}
               priceWithoutDiscount={1150}
               priceWithDiscount={1050}
             />

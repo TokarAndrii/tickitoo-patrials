@@ -2,16 +2,16 @@ const tripInfo = {
   id: 1,
   carrierName: "LEON POL TRANS",
   departure: {
-    time: "10:30",
-    date: "среда, 28 ноября",
-    city: "Киев",
-    station: 'Автовокзал "Центральный"'
+    departureTime: "10:30",
+    departureDate: "среда, 28 ноября",
+    departureCity: "Киев",
+    departureStation: 'Автовокзал "Центральный"'
   },
   arriving: {
-    time: "20:30",
-    date: "среда, 28 ноября",
-    city: "Львов",
-    station: 'Автовокзал "Центральный"'
+    arrivingTime: "20:30",
+    arrivingDate: "среда, 28 ноября",
+    arrivingCity: "Львов",
+    arrivingStation: 'Автовокзал "Центральный"'
   },
   travelTime: {
     hours: 13,
