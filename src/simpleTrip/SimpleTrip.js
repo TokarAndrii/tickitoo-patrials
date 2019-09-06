@@ -1,26 +1,30 @@
 import React, { Component, createRef } from "react";
+import PropTypes from "prop-types";
 import Button from "../buttons/Button";
 import Route from "../route/RouteList";
 import routeData from "../route/testDataRoutes";
 import styles from "./SimpleTrip.module.scss";
-//TO DO PropTypes, Tests, MobileVersion after first code review
+//TO DO Tests
 
 class SimpleTrip extends Component {
   constructor(props) {
     super(props);
     this.state = { extended: false, showRouteDetails: true };
+    this.headerRef = createRef();
     this.handleToggleExtend = this.handleToggleExtend.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
   }
 
-  headerRef = createRef();
-
   handleToggleExtend = () => {
     const { isDesktop } = this.props;
     if (isDesktop) {
-      this.setState(prevState => ({ extended: !prevState.extended }));
-    }
-    if (!isDesktop) {
+      this.setState({ showRouteDetails: false }, () => {
+        this.setState(prevState => ({
+          extended: !prevState.extended,
+          showRouteDetails: !prevState.showRouteDetails
+        }));
+      });
+    } else {
       this.setState(prevState => ({
         extended: !prevState.extended,
         showRouteDetails: false
@@ -52,7 +56,7 @@ class SimpleTrip extends Component {
     }
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     const { isDesktop } = this.props;
     if (!isDesktop) window.removeEventListener("click", this.handleHeaderClick);
   }
@@ -224,5 +228,41 @@ class SimpleTrip extends Component {
     );
   }
 }
+
+SimpleTrip.propTypes = {
+  isDesktop: PropTypes.bool,
+  tripInfo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    carrierName: PropTypes.string.isRequired,
+    priceWithDiscount: PropTypes.number.isRequired,
+    priceWithoutDiscount: PropTypes.number.isRequired,
+    thereWay: PropTypes.bool.isRequired,
+    departure: PropTypes.shape({
+      departureTime: PropTypes.string.isRequired,
+      departureDate: PropTypes.string.isRequired,
+      departureCity: PropTypes.string.isRequired,
+      departureStation: PropTypes.string.isRequired
+    }).isRequired,
+    arriving: PropTypes.shape({
+      arrivingTime: PropTypes.string.isRequired,
+      arrivingDate: PropTypes.string.isRequired,
+      arrivingCity: PropTypes.string.isRequired,
+      arrivingStation: PropTypes.string.isRequired
+    }).isRequired,
+    travelTime: PropTypes.shape({
+      hours: PropTypes.number.isRequired,
+      minutes: PropTypes.number.isRequired
+    }).isRequired,
+    tripDetails: PropTypes.shape({
+      generalInfo: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      bus: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+};
+
+SimpleTrip.defaultProps = {
+  isDesktop: true
+};
 
 export default SimpleTrip;

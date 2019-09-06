@@ -31,6 +31,22 @@ const simpleTripMessages = defineMessages({
     id: "simpleTrip.simpleTripMessages.busMessage",
     description: "text at block about trip before - bus name",
     defaultMessage: "Автобус:"
+  },
+  showRouteButtonMobileVersion: {
+    id: "simpleTrip.simpleTripMessages.showRouteButtonMobileVersionMessage",
+    description: "text at show route button at mobile version of component",
+    defaultMessage: "Показать маршрут"
+  },
+  pricePerPassengerMobileVersion: {
+    id: "simpleTrip.simpleTripMessages.pricePerPassengerMobileVersionMessage",
+    description:
+      "text before price of one person at mobile version of component",
+    defaultMessage: "Стоимость за 1 пассажира:"
+  },
+  choseSeatsButtonMobileVersion: {
+    id: "simpleTrip.simpleTripMessages.choseSeatsButtonMobileVersionMessage",
+    description: "text on button chose seats at mobile version of component",
+    defaultMessage: "Выбрать места"
   }
 });
 
