@@ -1,8 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import SimpleTrip from "../simpleTrip/SimpleTrip";
 import Button from "../buttons/Button";
 import styles from "./CompoundTrip.module.scss";
-//TO DO PropTypes, Tests, MobileVersion after first code review
 
 class CompoundTrip extends Component {
   render() {
@@ -11,7 +11,6 @@ class CompoundTrip extends Component {
       priceWithDiscount,
       priceWithoutDiscount
     } = this.props;
-
     return (
       <div className={styles.route}>
         <div className={styles["route__description"]}>
@@ -35,12 +34,18 @@ class CompoundTrip extends Component {
               {priceWithDiscount}
               <span>грн.</span>
             </div>
-            <Button message="Выбрать" className={styles["btn-orange"]} />
+            <Button message="Выбрать" className={styles["primary"]} />
           </div>
         </div>
       </div>
     );
   }
 }
+
+CompoundTrip.propTypes = {
+  listTripInfo: PropTypes.array.isRequired,
+  priceWithDiscount: PropTypes.number.isRequired,
+  priceWithoutDiscount: PropTypes.number.isRequired
+};
 
 export default CompoundTrip;

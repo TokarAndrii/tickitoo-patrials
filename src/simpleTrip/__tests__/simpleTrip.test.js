@@ -6,6 +6,12 @@ import mockProps from "../mockProps";
 describe("SimpleTrip tests", () => {
   let wrapper;
   const isDesktopTrue = true;
+  const handleHeaderClick = () => {
+    wrapper.setState({
+      extended: true,
+      showRouteDetails: false
+    });
+  };
   beforeEach(() => {
     wrapper = shallow(
       <SimpleTrip isDesktop={isDesktopTrue} tripInfo={mockProps} />
@@ -113,5 +119,91 @@ describe("SimpleTrip tests", () => {
     expect(
       wrapper.find(".route__information").contains(mockProps.tripDetails.bus)
     ).toEqual(true);
+  });
+  it("should not render Route at mobile version if extended and not  showRouteDetails", () => {
+    wrapper.setProps({ isDesktop: false });
+    wrapper.setState({ extended: false });
+    expect(wrapper.find(".route__schedule").length).toBe(0);
+  });
+
+  it("should render Route at mobile version if extended and showRouteDetails", () => {
+    wrapper.setProps({ isDesktop: false });
+    wrapper.setState({ extended: true });
+    expect(wrapper.find(".route__schedule").length).toBe(1);
+  });
+  it("should not render Route at mobile version  on click at route header", () => {
+    wrapper.setProps({ isDesktop: false });
+    const handleHeaderClick = () => {
+      wrapper.setState({
+        extended: true,
+        showRouteDetails: false
+      });
+    };
+    wrapper.find(".route__header").simulate("click", handleHeaderClick());
+    expect(wrapper.find(".route__schedule").length).toBe(0);
+  });
+  it("should render route information at mobile version  on click at route header", () => {
+    wrapper.setProps({ isDesktop: false });
+
+    wrapper.find(".route__header").simulate("click", handleHeaderClick());
+    expect(wrapper.find(".route__information").length).toBe(1);
+  });
+  it("should render price wit discount at mobile version  on click at route header", () => {
+    wrapper.setProps({ isDesktop: false });
+    wrapper.find(".route__header").simulate("click", handleHeaderClick());
+    expect(
+      wrapper.find(".route__bottom-price").contains(mockProps.priceWithDiscount)
+    ).toEqual(true);
+  });
+  it("should not render price without discount at mobile version  on click at route header", () => {
+    wrapper.setProps({ isDesktop: false });
+    wrapper.find(".route__header").simulate("click", handleHeaderClick());
+    expect(
+      wrapper
+        .find(".route__bottom-price")
+        .contains(mockProps.priceWithoutDiscount)
+    ).toEqual(false);
+  });
+  it("should render Route at mobile version on click at show route button", () => {
+    wrapper.setProps({ isDesktop: false });
+    wrapper.setState({
+      extended: true,
+      showRouteDetails: false
+    });
+
+    wrapper
+      .find(".secondary")
+      .simulate("click", wrapper.instance().handleToggleShowRoute());
+
+    expect(wrapper.find(".route__schedule").length).toBe(1);
+  });
+  it("should not render Route at mobile version on 2nd click at show route button", () => {
+    wrapper.setProps({ isDesktop: false });
+    wrapper.setState({
+      extended: true,
+      showRouteDetails: false
+    });
+
+    wrapper
+      .find(".secondary")
+      .simulate("click", wrapper.instance().handleToggleShowRoute())
+      .simulate("click", wrapper.instance().handleToggleShowRoute());
+
+    expect(wrapper.find(".route__schedule").length).toBe(0);
+  });
+  it("should render Route at desktop version on click at details button", () => {
+    wrapper
+      .find(".secondary")
+      .simulate("click", wrapper.instance().handleToggleExtend());
+
+    expect(wrapper.find(".route__schedule").length).toBe(1);
+  });
+  it("should not render Route at desktop version on 2nd click at details button", () => {
+    wrapper
+      .find(".secondary")
+      .simulate("click", wrapper.instance().handleToggleExtend())
+      .simulate("click", wrapper.instance().handleToggleExtend());
+
+    expect(wrapper.find(".route__schedule").length).toBe(0);
   });
 });
