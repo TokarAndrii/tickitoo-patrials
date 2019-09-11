@@ -92,7 +92,7 @@ class App extends Component {
         <ButtonBack
           className={styles.buttonBack}
           message="назад"
-          linkTo="/some"
+          // linkTo="/some"
         />
 
         <main>
