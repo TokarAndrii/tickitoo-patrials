@@ -19,6 +19,7 @@ import paymentPageMockData from "./paymentPage//paymentPageListMockData";
 
 import HomePage from "./pages/homePage/HomePage";
 import Banner from "./banner/Banner";
+import PassengerForm from "./passengerForm/PassengerForm";
 
 //some stuff to get array from income request
 //const { maps_seat } = mockDataSeats2;
@@ -77,6 +78,7 @@ class App extends Component {
               priceWithDiscount={1050}
             />
           </div>
+          <PassengerForm></PassengerForm>
 
           {/* <div>
             <RouteList listRoute={testRouteData} fullView={true} />
