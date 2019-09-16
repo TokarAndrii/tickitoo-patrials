@@ -63,7 +63,7 @@ class App extends Component {
           />
 
           {/* <SimpleTrip thereWay isDesktop /> */}
-          {/* <SimpleTrip tripInfo={simpleTripMockData} thereWay isDesktop /> */}
+          <SimpleTrip tripInfo={simpleTripMockData} thereWay isDesktop />
           {/* <div className={styles.container2}>
             <CompoundTrip
               listTripInfo={compoundMockProps}
@@ -78,7 +78,7 @@ class App extends Component {
               priceWithDiscount={1050}
             />
           </div>
-          <PassengerForm></PassengerForm>
+          {/* <PassengerForm></PassengerForm> */}
 
           {/* <div>
             <RouteList listRoute={testRouteData} fullView={true} />

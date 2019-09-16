@@ -64,7 +64,7 @@ const paymentPageMessages = defineMessages({
   publicOfferText: {
     id: "paymentPage.paymentPageMessages.publicOfferTextMessage",
     description: "text public offer link",
-    defaultMessage: "публичной оферты, политики конфиденциальности"
+    defaultMessage: "публичной оферты, политики конфиденциальности "
   },
   acceptTermsTextPart1: {
     id: "paymentPage.paymentPageMessages.acceptTermsTextPart1Message",
